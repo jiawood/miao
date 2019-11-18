@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>this is my html practice</title>
+</head>
+
+<body>
+  <h1>Lorem.</h1>
+  <h2>Lorem</h2>
+  <h3>Lorem ipsum dolor.</h3>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, numquam, repudiandae architecto neque sunt distinctio
+    unde, autem veniam maiores aperiam eveniet obcaecati fugit dolorem! Error voluptatum dolore maiores veritatis
+    ratione.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem incidunt, voluptates, facere est omnis
+    atque reprehenderit ratione illum praesentium obcaecati sint laboriosam corrupti nostrum voluptatem! Tempore
+    distinctio quidem cupiditate accusamus iure cum placeat temporibus earum nam labore. Amet doloremque a voluptatum
+    repellat, quo porro modi ut dicta maiores minus voluptates, provident labore id, voluptas et illo corporis incidunt?
+    Nihil iure natus harum saepe tenetur, molestiae fugit amet, blanditiis hic cum quia perferendis, obcaecati at iusto.
+    Ut dolore possimus excepturi maxime obcaecati reprehenderit laborum accusantium iure cum quibusdam fugiat dolor
+    delectus modi facere earum eaque doloremque non consectetur, architecto temporibus ad!</p>
+  <br>
+  <div>
+    <a href="https://www.jd.com/" target="_blank">在新窗口打开京东</a>
+    <a href="mailto:1470432722@qq.com">点击向小J发送邮件</a>
+    <a href="#bottom">跳转到本页的底部</a>
+    <a href="https://w.wallhaven.cc/full/lm/wallhaven-lmgzgr.png" download="pgn">点击有惊喜哦</a>
+
+  </div>
+  <img src="https://w.wallhaven.cc/full/lm/wallhaven-lmgzgr.png" alt="您需要科学上网才能访问呢！" width="300" height="200">
+  <hr>
+  <hr>
+  <marquee behavior="slide" direction="right"></marquee>
+  <div>
+    <p>三种强调的区别：</p>
+    <ul>
+      <li><em>em</em></li>
+      <li><strong>strong</strong></li>
+      <li><b>b</b></li>
+    </ul>
+    <!-- 上面那段代码显示了三种加粗的不同-->
+    <!-- 要记住Ctrl+/自动改为注释哦 -->
+  </div>
+  <p>要在页面中显示代码需要使用pre标签，在里面嵌套code标签，如果要改变代码的样式需要再操作，浏览器不会自动带上编辑器里面的样式</p>
+  <div>
+    <pre><code>
+function(){
+  let author = xiaoJ
+  reture author
+}
+  </code></pre>
+  </div>
+  <hr>
+  <ul>
+    <li>无序li1<ol>
+        有序列表1<ol>ol in ol 1</ol>
+        <ol>ol in ol 2</ol>
+      </ol>
+      <ol>有序列表2</ol>
+    </li>
+    <li>无序li2</li>
+    <li>无序li3</li>
+  </ul>
+  <div>
+    <dl>
+      <dt>dl dt 1
+      <dd>dd11</dd>
+      </dt>
+      <dt>dl dt 2
+      <dd>dd21</dd>
+      <dd>dd22</dd>
+      <dd>dd23</dd>
+      </dt>
+      <dt>dl dt 3
+      <dd>dd31</dd>
+      <dd>dd32</dd>
+      </dt>
+    </dl>
+  </div>
+
+  <hr>
+  <p>表单练习：Google搜索</p>
+  <form action="https://www.google.com/search?" target="_blank">
+    <input type="text" name="q" placeholder="please input what you what to search in google" required>
+    <button>google搜索</button>
+  </form>
+  <hr>
+  <p>
+    个人信息调查表
+  </p>
+  <form action>
+    <dl>
+      <dt>性别
+      <dd><label><input type="radio">女</label></dd>
+      <dd><label><input type="radio">男</label></dd>
+      </dt>
+      <dt>年龄
+      <dd>
+        <select name id>
+          <option value selected hidden>please choose</option>
+          <optgroup label="少年">
+            <option value="1-6">1-6岁</option>
+            <option value="6-12">6-12岁</option>
+          </optgroup>
+          <optgroup label="青年">
+            <option value="12-20">12-20岁</option>
+            <option value="20-30">20-30岁</option>
+          </optgroup>
+          <optgroup label="壮年">
+            <option value="30-40">30-40岁</option>
+            <option value="40-48">40-48岁</option>
+          </optgroup>
+        </select>
+      </dd>
+      </dt>
+      <dt>生日</dt>
+      <dd>
+        <input type="date">
+      </dd>
+      </dt>
+      <dt>生辰
+      <dd>
+        <input type="time">
+      </dd>
+      </dt>
+      <dt>照片
+      <dd>
+        <label>
+          "点我上传照片，我比上传按钮好看"
+          <input type="file" name id>
+        </label>
+      </dd>
+      </dt>
+      <dt>肤色
+      <dd>
+        <input type="color">
+      </dd>
+      </dt>
+      <dt>自我介绍
+      <dd>
+        <textarea name id cols="30" rows="10"></textarea>
+      </dd>
+      </dt>
+    </dl>
+  </form>
+
+</body>
+
+</html>
