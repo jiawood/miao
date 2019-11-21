@@ -56,8 +56,8 @@ function(){
   <hr>
   <ul>
     <li>无序li1<ol>
-        有序列表1<ol>ol in ol 1</ol>
-        <ol>ol in ol 2</ol>
+        有序列表1<li>ol in ol 1</li>
+        <li>ol in ol 2</li>
       </ol>
       <ol>有序列表2</ol>
     </li>
@@ -88,18 +88,23 @@ function(){
     <button>google搜索</button>
   </form>
   <hr>
-  <p>
-    个人信息调查表
-  </p>
+
   <form action>
+    <p>
+      个人信息调查表
+    </p>
     <dl>
       <dt>性别
-      <dd><label><input type="radio">女</label></dd>
-      <dd><label><input type="radio">男</label></dd>
+      <dd>
+        <label for="female">女</label>
+        <input type="radio" name="gender" id="female">
+        <label for="male">男</label>
+        <input type="radio" name="gender" id="male">
+      </dd>
       </dt>
       <dt>年龄
       <dd>
-        <select name id>
+        <select name="age" id>
           <option value selected hidden>please choose</option>
           <optgroup label="少年">
             <option value="1-6">1-6岁</option>
@@ -118,30 +123,30 @@ function(){
       </dt>
       <dt>生日</dt>
       <dd>
-        <input type="date">
+        <input type="date" name="brithday">
       </dd>
       </dt>
       <dt>生辰
       <dd>
-        <input type="time">
+        <input type="time" name="bruthtime">
       </dd>
       </dt>
       <dt>照片
       <dd>
         <label>
           "点我上传照片，我比上传按钮好看"
-          <input type="file" name id>
+          <input type="file" hidden name="photo" id>
         </label>
       </dd>
       </dt>
       <dt>肤色
       <dd>
-        <input type="color">
+        <input type="color" name="skin-color">
       </dd>
       </dt>
       <dt>自我介绍
       <dd>
-        <textarea name id cols="30" rows="10"></textarea>
+        <textarea name="selfintro" id cols="30" rows="10"></textarea>
       </dd>
       </dt>
     </dl>
@@ -154,11 +159,13 @@ function(){
       <input type="text">
       <input type="text">
     </fieldset>
-    <input type="submit">
-    <input type="reset" name id>
+    <input type="submit" value="提交">
+    <input type="reset" name id value=" 重置">
   </form>
 
   <table title="货品列表" border="1">
+    <caption>货品列表</caption>
+    <!-- //货品列表 -->
     <tr>
       <th>编号</th>
       <th>品名</th>
@@ -194,7 +201,8 @@ function(){
   <img src="https://drscdn.500px.org/photo/174778125/m%3D1170_k%3D1/2841ccf2a3720e8e794a6a6930f6ff2c" width=300 alt=""
     usemap="#amap">
   <map name="amap">
-    <area shape="rect" coords="0,0,200,200" href="https://www.mi.com" alt="无法显示" title="abc" translate="_blank">
+    <area target="_blank" shape="rect" coords="0,0,200,200" href="https://www.mi.com" alt="无法显示" title="abc"
+      translate="_blank">
   </map>
   <hr>
   <hr>
@@ -207,6 +215,8 @@ function(){
   <p>&lt;span&gt;</p>
 
   <audio autoplay controls loop src="1.mp3"></audio>
+
+  <div id="bottom"></div>
 </body>
 
 </html>
