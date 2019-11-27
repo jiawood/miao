@@ -9,13 +9,17 @@
 </head>
 
 <body>
-  <div class="total">
+  <div class="w">
     <p class="header">hello world 请调整浏览器窗口大小查看效果</p>
-    <p>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
-      宽度600px
-      页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
-      宽度600px
-    </p>
+  </div>
+  <p>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
+    宽度600px
+    页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
+    宽度600px
+  </p>
+  <div class="total">
+
+
     <div class="tabel">有字要居中</div>
     <div class="tabel">x</div>
     <div class="tabel">i</div>
@@ -44,16 +48,27 @@
 
 
 <style>
-  div.total {
-    width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  p.first {
+    background: rgb(0, 0, 0);
+    height: 1em;
   }
 
-  p.header {
-    background: rgb(0, 0, 0);
-    color: white;
+  div.total,
+  p {
+    width: 600px;
+    margin: auto;
+  }
 
+  div.w {
+    background: rgb(0, 0, 0);
+
+
+  }
+
+  div.w p.header {
+    color: white;
+    width: 600px;
+    margin: auto;
   }
 
   a {
@@ -67,33 +82,27 @@
   }
 
   div.tabel {
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     display: block;
-    width: 180px;
-    height: 40px;
+    width: 176px;
+    height: 36px;
     border: 2px solid black;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background: rgb(255, 192, 203);
     text-align: center;
-    padding-top: 15px;
+  }
 
+  div.tabel:nth-child(3n+2) {
+    margin-left: 200px;
+    margin-top: -45px;
+  }
+
+  div.tabel:nth-child(3n+3) {
+    margin-left: 400px;
+    margin-top: -45px;
   }
 
   div.tabel:hover {
     background-color: red;
-  }
-
-  div.tabel:nth-child(3n) {
-    margin-left: 1px;
-  }
-
-  div.tabel:nth-child(3n+1) {
-    margin-left: 210px;
-    margin-top: -80px;
-  }
-
-  div.tabel:nth-child(3n+2) {
-    margin-left: 420px;
-    margin-top: -80px;
   }
 </style>
