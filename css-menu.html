@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <nav>
+      <ul>
+        <li class="first-menu File">File
+          <ul>
+            <li class="secend-menu">New File</li>
+            <li class="secend-menu">New window</li>
+            <li class="secend-menu">Open File</li>
+            <li class="secend-menu">Open Folder</li>
+            <li class="secend-menu">Open Workspace</li>
+            <li class="secend-menu Open-Recent">Open Recent
+              <ul>
+                <li>third menu1</li>
+                <li>third menu2</li>
+                <li>third menu3</li>
+                <li>third menu4</li>
+                <li>third menu5</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="first-menu Edit">Edit</li>
+        <li class="first-menu">Selection</li>
+        <li class="first-menu">View</li>
+        <li class="first-menu">Go</li>
+        <li class="first-menu">Debug</li>
+        <li class="first-menu">Terminal</li>
+        <li class="first-menu">Help</li>
+      </ul>
+    </nav>
+  </div>
+</body>
+
+</html>
+
+<style>
+  body {
+    font-size: 0;
+  }
+
+  li.first-menu {
+    font-size: 14px;
+    display: inline-block;
+    padding: 5px 7px;
+    background-color: rgb(60, 60, 60);
+  }
+
+  li.first-menu>ul {
+    visibility: hidden;
+    position: absolute;
+    padding: 0px 10px;
+    top: 29px;
+    xleft: 40px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    xpadding-left: -40px;
+    list-style-type: none;
+    background-color: rgb(45, 45, 45);
+  }
+
+  li.first-menu>ul>li {
+    xdisplay: block;
+    xborder: 1px solid;
+
+  }
+
+  li.first-menu:hover>ul {
+    visibility: visible;
+  }
+
+  li.secend-menu.Open-Recent ul {
+    position: absolute;
+  }
+
+  li.secend-menu.Open-Recent ul {
+    visibility: hidden;
+    position: absolute;
+    padding: 0px 10px;
+    left: 126px;
+    top: 95px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    xpadding-left: -40px;
+    list-style-type: none;
+    background-color: rgb(45, 45, 45);
+    width: auto;
+  }
+
+  li.secend-menu.Open-Recent ul li {
+    xdisplay: block;
+    xborder: 1px solid;
+    display: inline-block;
+    width: 100px;
+  }
+
+  li.secend-menu.Open-Recent:hover ul {
+    visibility: visible;
+  }
+</style>

@@ -1,0 +1,21 @@
+.icon{
+    background-image: url(https://www.google.com/images/nav_logo242_hr.webp);
+    display: inline-block;
+
+}
+
+.icon-logo{
+background-position: top left -48px;
+    width: 240px;
+    height: 80px;
+}
+.icon-bottom{
+    background-position: top -80px right;
+    width: 60px;
+    height: 60px;
+}
+.icon-gear{
+    background-position: left -81px top -513px;
+    width: 40px;
+    height: 40px;
+}

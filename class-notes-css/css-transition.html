@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>
+
+<style>
+  div {
+    width: 100px;
+    height: 100px;
+    xtransition: 1s;
+    /*持续时间*/
+    border: 1px solid;
+    position: relative;
+    left: 100px;
+    transition-property: width, height;
+    transition-duration: 2s, 2s;
+    /*duration-time*/
+    xxtransition-timing-function: cubic-bezier(.15, 1.35, .85, -0.5), ease;
+    /*这个代表函数的运动速度，可以实现不同的效果*/
+    xtransition-timing-function: steps(5, end);
+    transition-delay: 2s, 0s;
+
+  }
+
+  div:hover {
+    width: 200px;
+    height: 300px;
+    left: 100px;
+    background-color: red;
+    xtransition: 1s;
+    transition-property: width, height;
+    transition-duration: 2s, 2s;
+    transition-delay: 0s, 2s;
+
+  }
+</style>
+
+<!-- cubic-bezier 这个网站可以看 transition-timing-function不同函数的速度 -->
+
+<!-- transition:linear width 5s,ease height 1s  -->
+<!-- 可以把transition的所有属性写在同一个属性内 -->
