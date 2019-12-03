@@ -13,12 +13,30 @@
     <input type="checkbox" id="ios-check">
     <label for="ios-check"></label>
   </div>
+
+  <div>
+    <input type="radio" name="t" id="fi">
+    <label for="fi">
+      <span>Radio Button</span>
+
+    </label></input>
+    <input type="radio" name="t" id="se">
+    <label for="se">
+      <span>Radio Button</span>
+
+    </label></input>
+    <input type="radio" name="t" id="ti">
+    <label for="ti">
+      <span>Radio Button</span>
+
+    </label></input>
+  </div>
 </body>
 
 </html>
 
 <style>
-  label {
+  label[for="ios-check"] {
     display: inline-block;
     box-sizing: border-box;
     width: 80px;
@@ -29,7 +47,7 @@
     transition: 0.3s;
   }
 
-  label::before {
+  label[for="ios-check"]::before {
     content: "";
     display: inline-block;
     height: 40px;
@@ -41,7 +59,7 @@
     cursor: pointer;
   }
 
-  input:checked+label {
+  input[for="ios-check"]:checked+label {
     box-shadow: 0 0 0 24px rgb(48, 243, 73) inset;
     xbackground: rgb(48, 243, 73);
     border-color: rgb(48, 243, 73);
@@ -51,7 +69,7 @@
 
   }
 
-  input:checked+label::before {
+  input[for="ios-check"]:checked+label::before {
     margin-left: 30px;
     background: white;
     transition: 0.3s;
@@ -61,5 +79,63 @@
 
   input {
     display: none;
+  }
+</style>
+
+
+<style>
+  input {
+    display: none;
+  }
+
+  input+label {
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    border: 1px solid;
+    margin: 10px;
+  }
+
+  span {
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    left: 25px;
+    top: -2px;
+  }
+
+  input:checked+label {
+    transition: .2s;
+    xbox-shadow: 0 0 0 10px rgb(2, 194, 94);
+  }
+
+  input+label::before {
+    content: "";
+    display: block;
+    height: 0px;
+    width: 0px;
+    border-radius: 1px;
+
+    border: 1px solid;
+    xmargin: 10px;
+    position: relative;
+    left: 9px;
+    top: 9px;
+    visibility: hidden;
+    color: rgb(2, 194, 94);
+
+    transition: .2s;
+  }
+
+  input:checked+label::before {
+    box-shadow: 0 0 0 5px rgb(2, 194, 94);
+    visibility: visible;
+    xbox-shadow: 0 0 0 25px rgb(158, 220, 189);
+  }
+
+  input+label:active {
+    box-shadow: 0 0 0 12px rgb(158, 220, 189);
+    transition: .2s;
   }
 </style>
