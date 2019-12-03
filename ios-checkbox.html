@@ -59,7 +59,7 @@
     cursor: pointer;
   }
 
-  input[for="ios-check"]:checked+label {
+  input#ios-check:checked+label {
     box-shadow: 0 0 0 24px rgb(48, 243, 73) inset;
     xbackground: rgb(48, 243, 73);
     border-color: rgb(48, 243, 73);
@@ -69,7 +69,7 @@
 
   }
 
-  input[for="ios-check"]:checked+label::before {
+  input#ios-check:checked+label::before {
     margin-left: 30px;
     background: white;
     transition: 0.3s;
@@ -77,18 +77,18 @@
 
   }
 
-  input {
+  input#ios-check {
     display: none;
   }
 </style>
 
 
 <style>
-  input {
+  input[type="radio"] {
     display: none;
   }
 
-  input+label {
+  input[type="radio"]+label {
     display: block;
     height: 20px;
     width: 20px;
@@ -105,12 +105,12 @@
     top: -2px;
   }
 
-  input:checked+label {
+  input[type="radio"]:checked+label {
     transition: .2s;
     xbox-shadow: 0 0 0 10px rgb(2, 194, 94);
   }
 
-  input+label::before {
+  input[type="radio"]+label::before {
     content: "";
     display: block;
     height: 0px;
@@ -128,13 +128,13 @@
     transition: .2s;
   }
 
-  input:checked+label::before {
+  input[type="radio"]:checked+label::before {
     box-shadow: 0 0 0 5px rgb(2, 194, 94);
     visibility: visible;
     xbox-shadow: 0 0 0 25px rgb(158, 220, 189);
   }
 
-  input+label:active {
+  input[type="radio"]+label:active {
     box-shadow: 0 0 0 12px rgb(158, 220, 189);
     transition: .2s;
   }
