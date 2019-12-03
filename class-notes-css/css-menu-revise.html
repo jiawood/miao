@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul class="menu">
+    <li>文件
+      <ul>
+        <li>保存</li>
+        <li>另存为
+          <ul>
+            <li>保存</li>
+            <li>另存为</li>
+            <li>退出</li>
+          </ul>
+        </li>
+        <li>退出</li>
+      </ul>
+    </li>
+    <li>编辑</li>
+    <li>选择</li>
+    <li>视图</li>
+    <li>转到</li>
+  </ul>
+</body>
+
+</html>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0px;
+  }
+
+  ul li {
+    position: relative;
+    white-space: nowrap;
+  }
+
+  ul.menu>li {
+    display: inline-block;
+  }
+
+  ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  ul ul ul {
+    top: 0%;
+    left: 100%;
+  }
+
+  li:hover>ul {
+    display: block;
+  }
+</style>

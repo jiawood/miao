@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+
+<body>
+  <table class="table  table-dark table-bordered table-hover">
+    <thead class="xthead-light">
+      <tr class="table-primary">
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-secondary">
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr class="table-success">
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr class="table-danger">
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
+
+<style>
+  .table {
+    border: rgb(128, 128, 128);
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    margin-bottom: 16px;
+    text-align: left;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    vertical-align: middle;
+
+  }
+
+  .table>thead>tr>th {
+    padding: 12px;
+    border-top: 1px solid rgb(222, 226, 230);
+    border-bottom: 2px solid rgb(222, 226, 230);
+
+
+  }
+
+  .table>tbody>tr>th,
+  .table>tbody>tr>td {
+    padding: 12px;
+    border-top: 1px solid rgb(222, 226, 230);
+  }
+
+  .table-dark {
+    background-color: rgb(52, 58, 64);
+    color: rgb(255, 255, 255)
+  }
+
+  .table-dark>thead>tr>th {
+    padding: 12px;
+    border-top: 1px solid rgb(69, 77, 85);
+
+
+  }
+
+  .table-dark>tbody>tr>th,
+  .table-dark>tbody>tr>td {
+    padding: 12px;
+    border-top: 1px solid rgb(69, 77, 85);
+  }
+
+  .table>thead.thead-dark>tr>th {
+    padding: 12px;
+    border-top: 1px solid rgb(222, 226, 230);
+    background-color: rgb(52, 58, 64);
+    color: rgb(255, 255, 255);
+  }
+
+  .table>thead.thead-light>tr>th {
+    padding: 12px;
+    border-top: 1px solid rgb(222, 226, 230);
+    background-color: rgb(233, 236, 239);
+    color: rgb(73, 80, 87);
+  }
+
+  .table-striped tbody tr:nth-child(2n+1) {
+    background-color: rgb(242, 242, 242);
+  }
+
+  .table-striped.table-dark tbody tr:nth-child(2n+1) {
+    background-color: rgb(62, 68, 74);
+  }
+
+  .table-bordered tr {
+    border-bottom: 1px solid rgb(222, 226, 230);
+  }
+
+  .table-bordered tr th,
+  .table-bordered tr td {
+    border: 1px solid rgb(222, 226, 230);
+  }
+
+  .table-borderless tr th,
+  .table-borderless tr td,
+  .table-borderless>thead>tr>th,
+  .table-borderless>tbody>tr>td,
+  .table-borderless>tbody>tr>th {
+    border: none;
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: rgb(236, 236, 236);
+  }
+
+  .table-hover.table-dark tbody tr:hover {
+    background-color: rgb(67, 73, 78);
+  }
+
+  .table-sm>thead>tr>th,
+  .table-sm>tbody>tr>th,
+  .table-sm>tbody>tr>td {
+    padding: 0;
+  }
+
+  .table-primary {
+    background-color: rgb(184, 218, 255);
+  }
+
+  .table-secondary {
+    background-color: rgb(214, 216, 219);
+  }
+
+  .table-success {
+    background-color: rgb(195, 230, 203);
+  }
+
+  .table-danger {
+    background-color: rgb(245, 198, 203);
+  }
+</style>

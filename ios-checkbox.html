@@ -26,6 +26,7 @@
     border-radius: 45px;
     border: 1px solid #CAC7C9;
     padding: 3px;
+    transition: 0.3s;
   }
 
   label::before {
@@ -35,7 +36,7 @@
     width: 40px;
     border: 1px solid #CAC7C9;
     border-radius: 50%;
-    transition: 0.1s;
+    transition: 0.3s;
     box-shadow: 0 0 2px 2px rgb(219, 219, 219);
     cursor: pointer;
   }
@@ -46,11 +47,15 @@
     border-color: rgb(48, 243, 73);
     xtransition-timing-function: steps(10, end);
     xborder-width: 20px;
+    transition: 0.3s;
+
   }
 
   input:checked+label::before {
     margin-left: 30px;
     background: white;
+    transition: 0.3s;
+
 
   }
 

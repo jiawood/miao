@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <input type="radio" name="drone" checked>
+    <label>Huey</label>
+  </div>
+
+  <div>
+    <input type="radio" name="drone">
+    <label>Dewey</label>
+  </div>
+
+  <div>
+    <input type="radio" name="drone">
+    <label>Louie</label>
+  </div>
+</body>
+
+</html>
+
+<style>
+  body {
+    height: 360px;
+    width: 360px;
+    background-color: white;
+    border: 1px solid;
+  }
+
+  div {
+    display: block;
+    xxheight: 50px;
+    xwidth: 250px;
+    xfont-size: 30px;
+    box-sizing: border-box;
+    xpadding: 50px;
+  }
+
+  input:checked+label:before {
+    content: "";
+    display: inline-block;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: green;
+    position: absolute;
+    left: -21px;
+    top: 4px;
+    xbox-shawdow
+  }
+
+  input+label {
+    position: relative;
+  }
+</style>
