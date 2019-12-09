@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+  </ul>
+
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+
+
+  </table>
+</body>
+
+</html>
+
+<style>
+  li {
+    list-style-type: none;
+    width: 50px;
+    height: 50px;
+    border: 5px solid red;
+    float: left;
+    margin-right: -5px;
+    margin-bottom: -5px;
+    position: relative;
+  }
+
+  ul {
+    width: 170px;
+    overflow: hidden;
+    border: 1px solid blue;
+    padding: 0;
+    padding-bottom: 5px;
+  }
+
+  li:hover {
+    border: 5px solid yellow;
+    z-index: 10;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td {
+    width: 50px;
+    height: 50px;
+    border: 5px ridge red;
+  }
+
+  td:hover {
+    border: 5px solid yellow;
+    z-index: 10;
+
+  }
+</style>
+
+<!-- 表格的做法有两种，这里只给出了一种，通过改变td的样式，使之后hover的时候整个边框的颜色改变。
+但还有一种做法是通过col和tr给之前的表格加边框，然后td：hover -->
