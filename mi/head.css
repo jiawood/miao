@@ -1,0 +1,84 @@
+
+body{
+width:100vw;
+font-size: 0;
+margin: 0;
+}
+div.site-topbar{
+height:40px;
+width:100%;
+background-color: rgb(51,51,51);
+
+}
+.site-topbar-left{
+width:1226px;
+margin:auto;
+}
+
+/*头部元素全部用a标签，这些标签的样式*/
+.site-topbar-left > a{
+  vertical-align: center;
+  height:40px;
+  display: inline-block;
+  padding-top:12px;
+  text-decoration: none;
+  box-sizing:border-box;
+  font-size: 12px;
+  color:rgb(176,176,176);
+  margin-right:17px;
+  position: relative;
+}
+
+/*hover的时候颜色会变化*/
+.site-topbar-left > a:hover{
+  color:rgb(255,255,255);
+}
+/*下载app下面的图片*/
+.site-topbar-left a.site-topbar-app div > img{
+
+width:85px;
+height:85px;
+position: absolute;
+top:20px;
+left:20px;
+
+}
+
+
+x.site-topbar-left a.site-topbar-app:hover div > img{
+display: inline-block;
+}
+
+.site-topbar-left a.site-topbar-app div > span{
+position: absolute;
+word-wrap: nowrap;
+left:20px;
+right:auto;
+bottom:15px;
+color:rgb(51,51,51);
+font-size:14px;
+}
+
+.site-topbar-left a.site-topbar-app div{
+width: 125px;
+height:150px;
+background-color: #fff;
+position: absolute;
+box-shadow:0 0  1px rgb(120,120,120);
+top:40px;
+left:-40px;
+display: none;
+}
+.site-topbar-left a.site-topbar-app:hover div{
+display: inline-block;
+}
+
+/*用伪元素实现三角形*/
+.site-topbar-left a.site-topbar-app:hover::after{
+  content:"";
+  border:20px solid white;
+  border-color:transparent transparent white transparent;
+  position: absolute;
+  left:0px;
+}
+
