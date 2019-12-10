@@ -8,16 +8,19 @@ div.site-topbar{
 height:40px;
 width:100%;
 background-color: rgb(51,51,51);
-
 }
-.site-topbar-left{
+
+
+.top-content{
 width:1226px;
 margin:auto;
+position:relative;
+vertical-align: middle;
 }
 
 /*头部元素全部用a标签，这些标签的样式*/
 .site-topbar-left > a{
-  vertical-align: center;
+  vertical-align: middle;
   height:40px;
   display: inline-block;
   padding-top:12px;
@@ -25,7 +28,7 @@ margin:auto;
   box-sizing:border-box;
   font-size: 12px;
   color:rgb(176,176,176);
-  margin-right:17px;
+  margin-right:16px;
   position: relative;
 }
 
@@ -82,3 +85,71 @@ display: inline-block;
   left:0px;
 }
 
+/*后三个元素要向后移*/
+.site-topbar-left > a:nth-last-child(3){
+ margin-left:230px;
+}
+
+.shopping{
+  position: absolute;
+  background-color: rgb(66,66,66);
+  height:40px;
+  width:120px;
+  right:0;
+  top:0;
+  vertical-align: middle;
+  color:rgb(176,176,176);
+  display: inline-block;
+
+}
+/*实现购物车*/
+.shopping i{
+  top:12px;
+  position: absolute;
+  width:300px;
+  height:18px;
+  left:16px;
+}
+
+.shopping span{
+  xwidth:23px;
+  height:18px;
+  font-size: 12px;
+  position: absolute;
+  top:12px;
+  left:35px;
+}
+.shopping span:last-child{
+height:0px;
+width:315px;
+background-color: white;
+position: absolute;
+left:-195px;
+top:40px;
+visibility: hidden;
+vertical-align: middle;
+xborder:1px solid black;
+line-height: 100px;
+box-shadow: 0 0 2px rgb(51,51,51);
+text-align: center;
+transition:  .4s;
+}
+.shopping:hover{
+  background-color: rgb(255,255,255);
+}
+.shopping:hover i{
+  color:red;
+}
+.shopping:hover span.data-nums{
+  color:red;
+
+}
+.shopping:hover span.data-message{
+  display: block;
+  color: rgb(51,51,51);
+  transition:  .4s;
+  height:100px;
+  xline-height: 100px;
+  visibility: visible;
+  xtransition-delay:  .6s;
+}
