@@ -1,3 +1,4 @@
+// 头部导航栏左边标签
 .site-header{
 width:100vw;
 height:100px;
@@ -6,6 +7,7 @@ background-color: #fff;
   width: 1226px;
   height: 100px;
   margin: auto;
+  position: relative;
 .header-logo{
   float:left;
   width:62px;
@@ -50,11 +52,94 @@ background-color: #fff;
   }
    &:hover::after{
     left:0;
-
   }
   }
+}
+}
+}
+
+// 头部导航栏部分
+.header-nav{
+  width:850px;
+  float:left;
+  color:#333;
+  background-color:rgba(0,0,0,0.1);
+  .nav-list{
+
+    float: left;
+    z-index:10;
+    height: 88px;
+    width:1100px;
+    margin: 0;
+    padding: 12px 0 0 170px;
+    list-style-type: none;
+    font-size: 16px;
+    display:list-item;
+    li{
+      float:left;
+      a.list{
+      text-decoration:none;
+      display: block;
+        transition: .2s;
+        color:#333;
+        padding:26px 10px 38px;
+        width:84px;
+        height:88px;
+        &:hover{
+          color: red;
+
+        }
+        &:hover+div.header-product{
+          height:210px;
+        }
+      }
+      div.header-product{
+          xwidth:100vw;
+          height:0;
+          box-shadow: 0 0 1px black;
+          overflow: hidden;
+          xdisplay:none;
+
+          ul{
+            float:left;
+            padding:0;
+            margin: 0;
+            list-style-type: none;
+            li{
+              height:200px;
+
+              float:left;
+              width:200px;
+              position: absolute;
+              left:-230px;
+              top:0;
+              transition: .2s;
+
+              a.img{
+                padding:0;
+                margin-left: 20px;
+                margin-top:38px;
+              }
+              a.header-p-name{
+                padding:0;
+                margin-top:20px ;
+                font-size: 12px;
+                color:#333;
+                text-align: center;
+              }
+              a.header-p-price{
+                padding:0;
+                margin-top:3px;
+                color:#ff6700;
+                font-size: 14px;
+                text-align: center;
+            }
+          }
+        }
+
+      }
+    }
+  }
 
 }
 
-}
-}
