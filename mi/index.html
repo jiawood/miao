@@ -9,10 +9,13 @@
   <title>小米商城 - 小米9 Pro、小米MIX Alpha、Redmi Note 8，小米电视官方网站</title>
   <link rel="icon" href="https://s01.mifile.cn/favicon.ico" type="image/x-icon">
   <link rel="stylesheet/less" type="text/css" href="site-header.less" />
+  <link rel="stylesheet/less" type="text/css" href="homehero.less" />
   <link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_1556460_d2faurw264.css" />
+  <script src="../less.min.js"></script>
 </head>
 
 <body>
+  <!-- 网站顶部 -->
   <div class=" site-topbar">
     <div class="top-content">
       <div class="site-topbar-left">
@@ -47,6 +50,7 @@
     </div>
 
   </div>
+  <!-- 网站头部 -->
   <div class="site-header clearfix">
     <div class="container">
       <!-- logo部分 -->
@@ -186,10 +190,46 @@
       </div>
     </div>
   </div>
-  <div class="home-hero-container container"></div>
-  <div class="page-main home-main"></div>
+  <!-- 网站核心 -->
+  <div class="homehero container ">
+    <div class="slider">
+      <input checked type="radio" name="img" id="i1">
+      <img src="img/five-one.jpg" alt="#">
+      <input type="radio" name="img" id="i2">
+      <img src="img/five-two.webp" alt="#">
+      <input type="radio" name="img" id="i3">
+      <img src="img/five-three.webp" alt="#">
+      <input type="radio" name="img" id="i4">
+      <img src="img/five-four.webp" alt="#">
+      <input type="radio" name="img" id="i5">
+      <img src="img/five-five.webp" alt="#">
+      <div class="item">
+        <label for="i1"></label>
+        <label for="i2"></label>
+        <label for="i3"></label>
+        <label for="i4"></label>
+        <label for="i5"></label>
+      </div>
+      <div class="arrow-R">
+        <label for="i5"></label>
+        <label for="i1"></label>
+        <label for="i2"></label>
+        <label for="i3"></label>
+        <label for="i4"></label>
+      </div>
+      <div class="arrow-L">
+        <label for="i2"></label>
+        <label for="i3"></label>
+        <label for="i4"></label>
+        <label for="i5"></label>
+        <label for="i1"></label>
+      </div>
+    </div>
 
-  <script src="../less.min.js"></script>
+  </div>
+  <!-- 网站核心下部 -->
+  <div class="homehero-sub container"></div>
+
 </body>
 
 
