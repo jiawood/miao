@@ -1,3 +1,7 @@
+*{
+  background-color:rgba(0,0,0,0.1);
+}
+
 // 头部导航栏左边标签
 .site-header{
 width:100vw;
@@ -63,7 +67,7 @@ background-color: #fff;
   width:850px;
   float:left;
   color:#333;
-  background-color:rgba(0,0,0,0.1);
+
   .nav-list{
 
     float: left;
@@ -91,6 +95,7 @@ background-color: #fff;
         }
         &:hover+div.header-product{
           height:210px;
+          transition:.6s;
         }
       }
       div.header-product{
@@ -108,12 +113,12 @@ background-color: #fff;
             li{
               height:200px;
 
-              float:left;
+              xfloat:left;
               width:200px;
               position: absolute;
-              left:-230px;
-              top:0;
-              transition: .2s;
+              xleft:-230px;
+              xtop:0;
+              xtransition: .2s;
 
               a.img{
                 padding:0;
@@ -143,3 +148,101 @@ background-color: #fff;
 
 }
 
+
+.header-search{
+  float:right;
+  width:296px;
+  height:50px;
+  padding: 0;
+  margin: 0;
+  margin-top:25px;
+  position: relative;
+  box-sizing: border-box;
+  form{
+    width: 296px;
+    height: 50px;
+    input.search-content{
+      width:245px;
+      height:50px;
+      box-sizing:border-box;
+      float: left;
+      padding: 0 10px;
+    }
+    label.submit{
+      width:51px;
+      height:50px;
+      background-color: red;
+      float: left;
+    }
+    >a{
+      position: absolute;
+      top:16px;
+      text-decoration:none;
+      color:#575757;
+      box-sizing:border-box;
+      margin:0 4px;
+      font-size: 12px;
+      background-color: rgb(238,238,238);
+    }
+    a.search-commend-first{
+      right:62px;
+    }
+    a.search-commend{
+      right:148px;
+    }
+
+  }
+}
+
+a{
+  text-decoration: none;
+}
+
+ul.search-list{
+  width:245px;
+  height:302px;
+  xposition: absolute;
+  float:left;
+  padding:0;
+  margin:0;
+  opacity: 0;
+  li{
+    width:245px;
+    height:30px;
+    box-sizing: border-box;
+    padding: 0 16px;
+    float:left;
+    a.search-list{
+      float:left;
+      width:211px;
+      margin:auto;
+      xheight:30px;
+      font-size: 12px;
+      span.p1-name{
+      float:left;
+      line-height: 30px;
+      vertical-align: middle;
+      width:100px;
+      color:rgb(75,75,75);
+      font-size: 12px;
+
+    }
+    span.p1-price{
+      xwidth:50px;
+      xheight:30px;
+      float:right;
+      line-height: 30px;
+      vertical-align: middle;
+      color:#c0c0c0;
+    }
+    }
+
+  }
+}
+
+input.search-content:focus ~ ul.search-list{
+  opacity: 1;
+}
+input.search-content:focus~a{
+  display: none;
+}
