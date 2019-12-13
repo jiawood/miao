@@ -108,37 +108,48 @@ input[id="i5"]:checked ~ div.arrow-R label[for="i5"]{
   display: block;
 }
 
-// input:nth-child(1):checked ~ div.arrow-L >label:nth-child(1){
-//   display: block;
-// }
-// input:nth-child(2):checked ~ div.arrow-L> label:nth-child(1){
-//   display: block;
-// }
-// input:nth-child(3):checked ~ div.arrow-L >label:nth-child(1){
-//   display: block;
-// }
-// input:nth-child(4):checked ~ div.arrow-L> label:nth-child(1){
-//   display: block;
-// }
-// input:nth-child(5):checked ~ div.arrow-L >label:nth-child(1){
-//   display: block;
-// }
+.home-nav{
+  width:234px;
+  height:460px;
+  position: absolute;
+  left:0;
+  top:0;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(165,155,155);
+  >ul{
+    padding:20px 0px;
 
-// input:nth-child(1):checked ~ div.arrow-R >label:nth-child(1){
-//   display: block;
-// }
-// input:nth-child(2):checked ~ div.arrow-R> label:nth-child(2){
-//   display: block;
-// }
-// input:nth-child(3):checked ~ div.arrow-R >label:nth-child(3){
-//   display: block;
-// }
-// input:nth-child(4):checked ~ div.arrow-R> label:nth-child(4){
-//   display: block;
-// }
-// input:nth-child(5):checked ~ div.arrow-R >label:nth-child(5){
-//   display: block;
-// }
+    >li{
+    width: 234px;
+    height: 42px;
+    &:hover{
+      ul.children-list{
+        opacity: 1;
+      }
+    }
+      >a {
+    width:206px;
+    height:42px;
+    font-size: 14px;
+    line-height: 42px;
+    vertical-align: middle;
+    margin-left:10px;
+    box-sizing:border-box;
+    color:rgb(255,255,255);
+    }
+    ul.children-list{
+      position: absolute;
+      left:100%;
+      top:0;
+      width:700px;
+      background-color: #fff;
+      height:460px;
+      opacity: 0;
+    }
+  }
+}
+}
 
 
 
