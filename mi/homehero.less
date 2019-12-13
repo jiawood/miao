@@ -52,7 +52,7 @@
   position: absolute;
   top: 195px;
   left:230px;
-  background:url(img/icon-slides.png) no-repeat 67% 0;
+  background:url(img/icon-slides.png) repeat 67% 0;
   display:none;
   &:hover{
     background-position: 0 0;
@@ -64,7 +64,7 @@
   position: absolute;
   top: 195px;
   right:0px;
-  background:url(img/icon-slides.png) no-repeat 100% 0;
+  background:url(img/icon-slides.png) repeat 100% 0;
   display: none;
   &:hover{
     background-position: 33% 0;
@@ -75,21 +75,70 @@ input:checked + img{
   opacity: 1;
 }
 
-input:nth-child(1):checked ~ div >label:nth-child(1){
+
+input[id="i2"]:checked ~ div.arrow-L label[for="i1"]{
   display: block;
 }
-input:nth-child(2):checked ~ div> label:nth-child(2){
+input[id="i3"]:checked ~ div.arrow-L label[for="i2"]{
   display: block;
 }
-input:nth-child(3):checked ~ div >label:nth-child(3){
+input[id="i4"]:checked ~ div.arrow-L label[for="i3"]{
   display: block;
 }
-input:nth-child(4):checked ~ div> label:nth-child(4){
+input[id="i5"]:checked ~ div.arrow-L label[for="i4"]{
   display: block;
 }
-input:nth-child(5):checked ~ div >label:nth-child(5){
+input[id="i1"]:checked ~ div.arrow-L label[for="i1"]{
   display: block;
 }
+
+input[id="i1"]:checked ~ div.arrow-R label[for="i2"]{
+  display: block;
+}
+input[id="i2"]:checked ~ div.arrow-R label[for="i3"]{
+  display: block;
+}
+input[id="i3"]:checked ~ div.arrow-R label[for="i4"]{
+  display: block;
+}
+input[id="i4"]:checked ~ div.arrow-R label[for="i5"]{
+  display: block;
+}
+input[id="i5"]:checked ~ div.arrow-R label[for="i5"]{
+  display: block;
+}
+
+// input:nth-child(1):checked ~ div.arrow-L >label:nth-child(1){
+//   display: block;
+// }
+// input:nth-child(2):checked ~ div.arrow-L> label:nth-child(1){
+//   display: block;
+// }
+// input:nth-child(3):checked ~ div.arrow-L >label:nth-child(1){
+//   display: block;
+// }
+// input:nth-child(4):checked ~ div.arrow-L> label:nth-child(1){
+//   display: block;
+// }
+// input:nth-child(5):checked ~ div.arrow-L >label:nth-child(1){
+//   display: block;
+// }
+
+// input:nth-child(1):checked ~ div.arrow-R >label:nth-child(1){
+//   display: block;
+// }
+// input:nth-child(2):checked ~ div.arrow-R> label:nth-child(2){
+//   display: block;
+// }
+// input:nth-child(3):checked ~ div.arrow-R >label:nth-child(3){
+//   display: block;
+// }
+// input:nth-child(4):checked ~ div.arrow-R> label:nth-child(4){
+//   display: block;
+// }
+// input:nth-child(5):checked ~ div.arrow-R >label:nth-child(5){
+//   display: block;
+// }
 
 
 
