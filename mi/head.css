@@ -10,7 +10,10 @@ width:100%;
 background-color: rgb(51,51,51);
 }
 
-
+a{
+  text-decoration: none;
+  cursor: pointers;
+}
 .top-content{
 width:1226px;
 margin:auto;
@@ -48,33 +51,36 @@ left:20px;
 }
 
 
-x.site-topbar-left a.site-topbar-app:hover div > img{
-display: inline-block;
-}
-
 .site-topbar-left a.site-topbar-app div > span{
 position: absolute;
 word-wrap: nowrap;
 left:20px;
 right:auto;
-bottom:15px;
+top:120px;
 color:rgb(51,51,51);
 font-size:14px;
+z-index: 1000;
 }
 
 .site-topbar-left a.site-topbar-app div{
 width: 125px;
-height:150px;
+xheight:150px;
+height: 0;
 background-color: #fff;
 position: absolute;
 box-shadow:0 0  1px rgb(120,120,120);
 top:40px;
 left:-40px;
-display: none;
+xdisplay: none;
+z-index: 1000;
+transition: .4s;
+overflow: hidden;
 }
-.site-topbar-left a.site-topbar-app:hover div{
-display: inline-block;
+.site-topbar-left a.site-topbar-app:hover div {
+xdisplay: block;
+height: 150px;
 }
+
 
 /*用伪元素实现三角形*/
 .site-topbar-left a.site-topbar-app:hover::after{
@@ -111,7 +117,10 @@ display: inline-block;
   left:16px;
 }
 
-.shopping span{
+a.shopping:hover div.shopping-content{
+  height: 100px;
+}
+a.shopping span.data-nums{
   xwidth:23px;
   height:18px;
   font-size: 12px;
@@ -119,37 +128,38 @@ display: inline-block;
   top:12px;
   left:35px;
 }
-.shopping span:last-child{
+div.shopping-content {
 height:0px;
 width:315px;
 background-color: white;
 position: absolute;
 left:-195px;
 top:40px;
-visibility: hidden;
-vertical-align: middle;
-xborder:1px solid black;
-line-height: 100px;
 box-shadow: 0 0 2px rgb(51,51,51);
-text-align: center;
 transition:  .4s;
+z-index: 1000;
+padding: 0;
+vertical-align: middle;
+overflow: hidden;
+margin: 0;
+text-align: center;
+
+}
+
+span.data-message{
+line-height: 90px;
+width: 316px;
+  font-size: 12px;
+  color:black;
+
 }
 .shopping:hover{
   background-color: rgb(255,255,255);
 }
 .shopping:hover i{
-  color:red;
+  color:rgb(255,103,0);
 }
 .shopping:hover span.data-nums{
-  color:red;
+  color:rgb(255,103,0);
 
-}
-.shopping:hover span.data-message{
-  display: block;
-  color: rgb(51,51,51);
-  transition:  .4s;
-  height:100px;
-  xline-height: 100px;
-  visibility: visible;
-  xtransition-delay:  .6s;
 }
