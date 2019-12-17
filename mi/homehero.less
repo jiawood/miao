@@ -88,7 +88,7 @@ input[id="i4"]:checked ~ div.arrow-L label[for="i3"]{
 input[id="i5"]:checked ~ div.arrow-L label[for="i4"]{
   display: block;
 }
-input[id="i1"]:checked ~ div.arrow-L label[for="i1"]{
+input[id="i1"]:checked ~ div.arrow-L label[for="i5"]{
   display: block;
 }
 
@@ -104,7 +104,7 @@ input[id="i3"]:checked ~ div.arrow-R label[for="i4"]{
 input[id="i4"]:checked ~ div.arrow-R label[for="i5"]{
   display: block;
 }
-input[id="i5"]:checked ~ div.arrow-R label[for="i5"]{
+input[id="i5"]:checked ~ div.arrow-R label[for="i1"]{
   display: block;
 }
 
@@ -120,13 +120,13 @@ input[id="i5"]:checked ~ div.arrow-R label[for="i5"]{
   >ul{
     padding:20px 0px;
 
-    >li{
+    >li.home-nav-list{
     width: 234px;
     height: 42px;
-    &:hover{
-      ul.children-list{
-        opacity: 1;
-      }
+    overflow: hidden;
+    &:hover ul.children-list{
+        display:block;
+
     }
       >a {
     width:206px;
@@ -145,7 +145,7 @@ input[id="i5"]:checked ~ div.arrow-R label[for="i5"]{
       width:700px;
       background-color: #fff;
       height:460px;
-      opacity: 0;
+      display: none;
     }
   }
 }

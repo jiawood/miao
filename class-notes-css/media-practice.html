@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <header>
+      <div class="header-content">
+
+      </div>
+    </header>
+    <div class="hero">
+      <div style="display:overflew-hidden">
+        <ul>
+          <li class="">1</li>
+          <li class="">2</li>
+          <li class="">3</li>
+          <li class="">4</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
+
+<style>
+  html,
+  body {
+    width: 100%;
+  }
+
+  header {
+    height: 765px;
+  }
+
+  .header-content {
+    width: 1140px;
+    margin: auto;
+    background-color: red;
+    height: 765px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-left: -1px;
+    margin-right: -1px;
+
+  }
+
+  li {
+    height: 260px;
+    float: left;
+    width: 25%;
+    border: 1px solid white;
+    background-color: gold;
+    box-sizing: border-box;
+  }
+
+  @media(max-width:800px) {
+    li {
+      width: 50%;
+    }
+  }
+
+  @media(max-width:200px) {
+    li {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    .header-content {
+      height: 600px;
+    }
+  }
+</style>

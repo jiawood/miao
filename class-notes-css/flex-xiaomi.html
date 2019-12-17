@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</body>
+
+</html>
+
+<style>
+  div {
+    display: flex;
+    border: 1px solid;
+    flex-wrap: wrap;
+    width: 1236px;
+    height: 636px;
+    flex-direction: column;
+  }
+
+  span:first-child {
+    height: 636px;
+    width: 230px;
+  }
+
+  span:nth-child(n+2):nth-child(-n + 8) {
+    height: 310px;
+    margin-top: 5px;
+    width: 230px;
+  }
+
+  span:nth-child(n+9) {
+    height: 155px;
+    margin-top: 5px;
+    width: 230px;
+  }
+</style>
