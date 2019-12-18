@@ -23,7 +23,7 @@ vertical-align: middle;
 
 /*头部元素全部用a标签，这些标签的样式*/
 .site-topbar-left > a{
-  vertical-align: middle;
+  xvertical-align: middle;
   height:40px;
   display: inline-block;
   padding-top:12px;
@@ -33,6 +33,7 @@ vertical-align: middle;
   color:rgb(176,176,176);
   margin-right:16px;
   position: relative;
+  display: inline-block;
 }
 
 /*hover的时候颜色会变化*/

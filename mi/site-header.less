@@ -1,3 +1,4 @@
+
 *{
   background-color:rgba(0,0,0,0.1);
   font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
@@ -107,6 +108,7 @@ box-sizing: border-box;
     display: inline-block;
     color:black;
     transition: 0;
+    vertical-align: middle;
     &:hover{
       span{
         color:black;
@@ -126,7 +128,7 @@ box-sizing: border-box;
       transition: .4s;
       background-color: #fff;
       box-sizing:border-box;
-      box-shadow: 0px 2px 3px 0px black;
+      box-shadow: 0px 1px 1px 0px rgb(75,75,75);
       ul{
         width: 1226px;
         margin: auto;
@@ -177,7 +179,7 @@ box-sizing: border-box;
 
 
 
-
+//头部搜索栏
 .header-search{
   float:right;
   width:296px;
@@ -202,10 +204,18 @@ box-sizing: border-box;
       height:50px;
       background-color: red;
       float: left;
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+      i{
+        &::before{
+          content:"@fa-search";
+        }
+      }
     }
     >a{
       position: absolute;
-      top:16px;
+      top:17px;
       z-index: 100;
       text-decoration:none;
       color:#575757;
@@ -213,6 +223,7 @@ box-sizing: border-box;
       margin:0 4px;
       font-size: 12px;
       background-color: rgb(238,238,238);
+      line-height: 1.2;
     }
     a.search-commend-first{
       right:62px;
@@ -230,12 +241,17 @@ a{
 
 ul.search-list{
   width:245px;
-  height:302px;
-  xposition: absolute;
+  xheight:302px;
+  position: absolute;
+  right:0;
+  top:50px;
   float:left;
   padding:0;
   margin:0;
-  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: 1000;
+  background-color: #fff;
   li{
     width:245px;
     height:30px;
@@ -263,7 +279,7 @@ ul.search-list{
       float:right;
       line-height: 30px;
       vertical-align: middle;
-      color:#c0c0c0;
+      color:rgb(75,75,75);
     }
     }
 
@@ -271,7 +287,7 @@ ul.search-list{
 }
 
 input.search-content:focus ~ ul.search-list{
-  opacity: 1;
+  height: 302px;
 }
 input.search-content:focus~a{
   display: none;

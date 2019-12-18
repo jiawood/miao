@@ -1,0 +1,29 @@
+
+
+@import "./fontawesome/less/fontawesome.less";
+@import "./fontawesome/less/solid";
+@import "./fontawesome/less/brands";
+
+// @fa-font-path:"./fontawesome/webfonts";
+
+.user {
+  .fa-icon;
+  .fas;
+
+  &:before {
+    content: @fa-var-user;
+  }
+}
+span{
+  color:red;
+  font-size: 20px;
+}
+
+.twitter {
+  .fa-icon;
+  .fab;
+
+  &:before {
+    content: @fa-var-twitter;
+  }
+}
