@@ -1,17 +1,20 @@
 *{
   background-color:rgba(0,0,0,0.1);
+  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
 }
-
+html{
+  overflow:scroll;
+}
 // 头部导航栏左边标签
 .site-header{
 width:100vw;
 height:100px;
 background-color: #fff;
-.container{
+position: relative;
+.container1{
   width: 1226px;
   height: 100px;
   margin: auto;
-  position: relative;
 .header-logo{
   float:left;
   width:62px;
@@ -62,91 +65,117 @@ background-color: #fff;
 }
 }
 
-// 头部导航栏部分
-.header-nav{
-  width:850px;
-  float:left;
-  color:#333;
+*{
+  padding: 0;
+  margin: 0;
+}
 
-  .nav-list{
 
-    float: left;
-    z-index:10;
-    height: 88px;
-    width:1100px;
-    margin: 0;
-    padding: 12px 0 0 170px;
-    list-style-type: none;
-    font-size: 16px;
-    display:list-item;
-    li{
-      float:left;
-      a.list{
-      text-decoration:none;
-      display: block;
-        transition: .2s;
-        color:#333;
-        padding:26px 10px 38px;
-        width:84px;
-        height:88px;
+//重写头部导航栏
+div.header-nav{
+width: 850px;
+height: 100%;
+float: left;
+padding: 0;
+margin: 0;
+padding-left: 173px;
+box-sizing: border-box;
+>ul{
+  margin: 0;
+    padding: 0;
+    margin-left: -20px;
         &:hover{
-          color: red;
-
-        }
-        &:hover+div.header-product{
-          height:210px;
-          transition:.6s;
-        }
-      }
-      div.header-product{
-          xwidth:100vw;
-          height:0;
-          box-shadow: 0 0 1px black;
-          overflow: hidden;
-          xdisplay:none;
-
-          ul{
-            float:left;
-            padding:0;
-            margin: 0;
-            list-style-type: none;
-            li{
-              height:200px;
-
-              xfloat:left;
-              width:200px;
-              xposition: absolute;
-              xleft:-230px;
-              xtop:0;
-              xtransition: .2s;
-
-              a.img{
-                padding:0;
-                margin-left: 20px;
-                margin-top:38px;
-              }
-              a.header-p-name{
-                padding:0;
-                margin-top:20px ;
-                font-size: 12px;
-                color:#333;
-                text-align: center;
-              }
-              a.header-p-price{
-                padding:0;
-                margin-top:3px;
-                color:#ff6700;
-                font-size: 14px;
-                text-align: center;
-            }
-          }
-        }
+      div.contain-ul{
+      height: 230px;
+      border:1px solid rgb(111,111,111);
 
       }
     }
-  }
+  >li{
+    list-style-type: none;
+    float: left;
+    vertical-align: middle;
+    padding-left: 22px;
+    &:hover a div.contain-ul{
+      z-index: 1000;
+    }
 
+  }
+  a{
+    font-size: 16px;
+    line-height: 100px;
+    display: inline-block;
+    color:black;
+    transition: 0;
+    &:hover{
+      span{
+        color:black;
+      }
+      color:rgb(255,103,0);
+
+    }
+    div.contain-ul{
+      height: 0px;
+      position: absolute;
+      width: 100vw;
+      padding: 0;
+      margin: 0;
+      z-index: 100;
+      left: 0;
+      overflow: hidden;
+      transition: .4s;
+      background-color: #fff;
+      box-sizing:border-box;
+      box-shadow: 0px 2px 3px 0px black;
+      ul{
+        width: 1226px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        li{
+        list-style:none;
+        height: 230px;
+        line-height: normal;
+        div{
+          width: 110px;
+          height: 160px;
+          display: block;
+          margin:auto;
+          margin-top:34px;
+          margin-bottom: 34px;
+          img{
+            line-height: 230px;
+          display: inline-block;
+
+          }
+          span{
+          display: inline-block;
+
+            line-height: normal;
+            margin-left: 40px;
+            width: 110px;
+            font-size: 12px;
+            margin-top: 5px;
+            text-align: center;
+          }
+          span:first-child{
+            color:black;
+          }
+          span:last-child{
+            color:rgb(255,103,0);
+          }
+        }
+      }
+      }
+
+    }
+  }
 }
+}
+
+
+
+
 
 
 .header-search{
@@ -177,6 +206,7 @@ background-color: #fff;
     >a{
       position: absolute;
       top:16px;
+      z-index: 100;
       text-decoration:none;
       color:#575757;
       box-sizing:border-box;
@@ -247,10 +277,5 @@ input.search-content:focus~a{
   display: none;
 }
 
-.container{
-  width: 1226px;
-  height: 100px;
-  margin: auto;
-  position: relative;
-}
+
 
