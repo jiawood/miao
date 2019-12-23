@@ -1,6 +1,7 @@
 
+
 *{
-  background-color:rgba(0,0,0,0.1);
+  xbackground-color:rgba(0,0,0,0.1);
   font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
 }
 html{
@@ -88,7 +89,7 @@ box-sizing: border-box;
         &:hover{
       div.contain-ul{
       height: 230px;
-      border:1px solid rgb(111,111,111);
+      border:1px solid rgb(175,175,175);
 
       }
     }
@@ -128,7 +129,7 @@ box-sizing: border-box;
       transition: .4s;
       background-color: #fff;
       box-sizing:border-box;
-      box-shadow: 0px 1px 1px 0px rgb(75,75,75);
+      box-shadow: 0px 1px 1px 0px rgb(175,175,175);
       ul{
         width: 1226px;
         margin: auto;
@@ -154,7 +155,7 @@ box-sizing: border-box;
           display: inline-block;
 
             line-height: normal;
-            margin-left: 40px;
+            margin-left: 22px;
             width: 110px;
             font-size: 12px;
             margin-top: 5px;
@@ -192,27 +193,42 @@ box-sizing: border-box;
   form{
     width: 296px;
     height: 50px;
+    font-size: 0;
     input.search-content{
       width:245px;
       height:50px;
       box-sizing:border-box;
       float: left;
       padding: 0 10px;
+      border: 1px solid rgb(111,111,111);
+      xborder-right-width: 0;
+
+      outline: none;
     }
-    label.submit{
+    label.submit > a{
       width:51px;
       height:50px;
-      background-color: red;
+      xbackground-color: red;
       float: left;
       display: block;
       box-sizing: border-box;
       margin: 0;
-      i{
-        &::before{
-          content:"@fa-search";
-        }
+      border: 1px solid rgb(111,111,111);
+      border-left: none;
+      text-align: center;
+      &:hover{
+        background-color: rgb(255,103,0);
+      border: 1px solid rgb(255,103,0);
+
       }
-    }
+      i{
+        margin-top: 12px;
+        display: inline-block;
+        vertical-align: bottom;
+        font-size: 24px;
+      }
+      }
+
     >a{
       position: absolute;
       top:17px;
@@ -243,7 +259,7 @@ ul.search-list{
   width:245px;
   xheight:302px;
   position: absolute;
-  right:0;
+  right:51px;
   top:50px;
   float:left;
   padding:0;
@@ -252,12 +268,16 @@ ul.search-list{
   overflow: hidden;
   z-index: 1000;
   background-color: #fff;
+  box-sizing: border-box;
   li{
     width:245px;
     height:30px;
     box-sizing: border-box;
     padding: 0 16px;
     float:left;
+    &:hover{
+      background-color: rgb(250,250,250);
+    }
     a.search-list{
       float:left;
       width:211px;
@@ -288,10 +308,19 @@ ul.search-list{
 
 input.search-content:focus ~ ul.search-list{
   height: 302px;
+  border:1px solid rgb(255,103,0);
+  border-top: none;
 }
 input.search-content:focus~a{
   display: none;
 }
 
+input.search-content:focus{
+
+  border:1px solid rgb(255,103,0) !important;
+}
+input.search-content:focus ~ label a{
+  border-color:rgb(255,103,0);
+}
 
 
