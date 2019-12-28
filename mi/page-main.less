@@ -323,7 +323,10 @@
       line-height: 58px;
       font-size: 16px;
       text-align: center;
-      color: #424242;
+      i,span{
+
+        color: rgb(66, 66, 66);
+      }
       &:hover i,&:hover span{
         color: #ff6700;
       }
@@ -333,7 +336,7 @@
     float: left;
   }
 
-  .page-main-mobio-content{
+  .ul-content{
     xheight: 614px;
     xwidth: 992px;
     ul{
@@ -409,3 +412,68 @@
 
 }
 
+
+.page-main-intelligent{
+width: 1226px;
+height: 672px;
+margin:auto;
+.intelligent-nav{
+  height: 672px;
+  width: 234px;
+  float: left;
+
+  .box-h2{
+    line-height: 58px;
+    font-size: 22px;
+    color: #333;
+    font-weight: 200;
+  }
+  .nav-left{
+    height: 614px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    div{
+      height: 300px;
+      &:hover{
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        transform:translateY(-2px);
+        transition: .4s;
+      }
+    }
+  }
+}
+.intelligent-content-container{
+  height: 672px;
+  width: 992px;
+  float: left;
+  position: relative;
+  .intelligent-content{
+    .intelligent-content-nav{
+      float: right;
+      font-size: 16px;
+      line-height: 58px;
+      height: 58px;
+      display: inline-block;
+      span{
+        float: right;
+        padding-left: 30px;
+        height: 58px;
+      }
+      &:hover{
+        color: #ff6700;
+        border-bottom: 2px solid #ff6700;
+      }
+      ul{
+        width: 992px;
+        height: 614px;
+        padding: 0;
+        margin: 0;
+        list-style:none;
+        float: left;
+        position: absolute;
+      }
+    }
+  }
+}
+}
