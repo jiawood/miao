@@ -175,7 +175,7 @@ console.log(+prompt()+(+prompt()));
 
 </script>
 
-<script id="ch0104/03"  type="x">
+<script id="ch0104/04"  type="x">
   var a = +prompt()
   a = Number(a.charCodeAt(a))
   if(a%2==0) console.log("NO")
@@ -205,7 +205,7 @@ console.log(+prompt()+(+prompt()));
   var a = +prompt()
   var b = +prompt()
 
-  if(a>=10&&b>=20){
+  if(a>=10&&b<=20){
     console.log(1)
   } else{
     console.log(0)
@@ -247,9 +247,9 @@ console.log(+prompt()+(+prompt()));
 
 <script id="ch0104/12"  >
   var a = +prompt()
-  if(a>90) console.log("Bike")
-  if(a=90) console.log("All")
-  if(a<90) console.log("Walk")
+  if(a>100) console.log("Bike")
+  if(a=100) console.log("All")
+  if(a<100) console.log("Walk")
 
 
 
@@ -258,7 +258,7 @@ console.log(+prompt()+(+prompt()));
 <script id="ch0104/13"  >
   var a = +prompt()
   if(a>=0&&a<5) console.log(-a+2.5)
-  if(a>=5&&a<10) console.log(2-1.5*(a-3))
+  if(a>=5&&a<10) console.log(2-1.5*(a-3)*(a-3))
   if(a>=10&&a<20) console.log(a/2-1.5)
 
 
@@ -271,12 +271,12 @@ console.log(+prompt()+(+prompt()));
     if(b=="n"){
       console.log(8)
     }
-    else console.log(8+4)
+    else console.log(8+5)
   }else{
     if(b=="n"){
       console.log(Math.ceil(a/500)*4)
     }
-    else console.log(Math.ceil(a/500)*4+4)
+    else console.log(Math.ceil(a/500)*4+5)
   }
 </script>
 
@@ -302,12 +302,12 @@ console.log(Math.max(a,b,c))
   var a = +prompt()
   if(a%4==0 ){
     if(a%100==0&&a%400!=0){
-      console.log(N)
+      console.log("N")
     }else{
-      console.log(Y)
+      console.log("Y")
     }
   }else{
-    console.log(N)
+    console.log("N")
   }
 </script>
 
@@ -315,14 +315,14 @@ console.log(Math.max(a,b,c))
   var a = +prompt()
   var b = +prompt()
 
-  if((a<=1&&a>=-1)&&(b<=1&&b>=-1)) console.log(yes)
-  else console.log(no)
+  if((a<=1&&a>=-1)&&(b<=1&&b>=-1)) console.log("yes")
+  else console.log("no")
 </script>
 
 <script id="ch0104/19"  >
   var a = +prompt()
   var b = +prompt()
-  var c = +prompt()
+  var c = prompt()
   if(c=="+"){
     console.log(a+b)
   }
@@ -348,14 +348,14 @@ console.log(Math.max(a,b,c))
 
   var delta = b*b - 4*a*c
   if(delta===0){
-    console.log("x1=x2="+String(-b/(2*a)))
+    console.log("x1=x2="+(-b/(2*a)))
   }else if(delta>0){
-    console.log("x1="+(-b+Math.sqrt(delta)/(2*a)))
+    console.log("x1="+(-b+Math.sqrt(delta)/(2*a))+";")
     console.log("x2="+(-b-Math.sqrt(delta)/(2*a)))
 
   }else{
     delta = -delta
-    console.log("x1="+(-b/(2*a)+"+"+Math.sqrt(delta)/(2*a)+"i"))
+    console.log("x1="+(-b/(2*a)+"+"+Math.sqrt(delta)/(2*a)+"i")+";")
     console.log("x2="+(-b/(2*a)+"-"+Math.sqrt(delta)/(2*a)+"i"))
 
   }
