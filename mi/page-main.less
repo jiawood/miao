@@ -449,21 +449,61 @@ margin:auto;
   float: left;
   position: relative;
   .intelligent-content{
+
+    .itelligent-content-nav-container{
+      float: right;
+      height: 58px;
+      width: 186px;
+      xx&:hover{
+        div.default{
+          color: rgb(66, 66, 66) ;
+          border:none ;
+        }
+      }
+    }
     .intelligent-content-nav{
       float: right;
       font-size: 16px;
       line-height: 58px;
       height: 58px;
       display: inline-block;
-      span{
-        float: right;
-        padding-left: 30px;
-        height: 58px;
-      }
-      &:hover{
+
+      &:last-child div{
+
+        xvisibility:visible;
         color: #ff6700;
         border-bottom: 2px solid #ff6700;
+        box-sizing: border-box;
+        ul{
+          visibility: visible;
+          z-index: 10;
+          xtransition: 0s 2s;
       }
+      }
+
+      div{
+        float: right;
+        margin-left: 30px;
+        height: 58px;
+        xvisibility: hidden;
+
+        &:hover{
+          color: #ff6700;
+          border-bottom: 2px solid #ff6700;
+          box-sizing: border-box;
+
+          ul{
+            visibility: visible;
+            transition:none;
+            z-index: 100;
+          }
+        }
+
+      }
+
+
+
+
       ul{
         width: 992px;
         height: 614px;
@@ -472,6 +512,11 @@ margin:auto;
         list-style:none;
         float: left;
         position: absolute;
+        background-color:rgba(0, 0, 0);
+        left: 0;
+        top: 58px;
+        visibility: hidden;
+        transition: 0s 2s;
       }
     }
   }
