@@ -387,7 +387,7 @@ console.log((sum/n).toFixed(2))
 <script id="ch0105/02">
 let n = 12
 let sum = 0
-for(let i = 0;i<12;i){
+for(let i = 0;i<12;i++){
   let m = +prompt()
   sum += m
 }
@@ -412,7 +412,7 @@ for(let i=0;i<n;i++){
   sum += a
 }
 console.log(sum)
-console.log((sum/n).toFixed(4))
+console.log((sum/n).toFixed(5))
 </script>
 <script id="ch0105/05">
 let n = +prompt()
@@ -448,9 +448,9 @@ let a = 0
 let b = 0
 let c = 0
 for(let i=0;i<n;i++){
-  a = a + prompt()
-  b = b + prompt()
-  c = c + prompt()
+  a = a + (+prompt())
+  b = b + (+prompt())
+  c = c + (+prompt())
 }
 console.log(a)
 console.log(b)
@@ -495,7 +495,7 @@ let m = +prompt()
 let n = +prompt()
 let sum = 0
 for(let i=m;i<=n;i++){
-  if(m%17==0){
+  if(i%17==0){
     sum += i
   }
 }
@@ -520,6 +520,10 @@ for(let i=0;i<n;i++){
     c10 += 1
   }
 }
+console.log(c1)
+console.log(c5)
+console.log(c10)
+
 
 </script>
 
@@ -556,7 +560,7 @@ console.log(count)
   for(let i=0;i<n;i++){
     res = res * 1.001
   }
-  console.log(res)
+  console.log(res.toFixed(4))
 
 
 </script>
@@ -571,67 +575,226 @@ console.log(count)
     res = res * (1 + a/100)
   }
 
-  console.log(res)
+  console.log(res.toFixed(0))
 </script>
 
-<script id="ch0105/">
-
+<script id="ch0105/16">
+let housePrice = 200
+let salary = +prompt()
+let year = 1
+while(salary<housePrice){
+  let k = +prompt()
+  year ++
+  housePrice = housePrice * (1 + k/100)
+  salary  = salary * year
+  if(year>20){
+    console.log("Impossible")
+    break
+  }
+}
+console.log(year)
 </script>
 
-<script id="ch0105/">
-
-</script>
-
-<script id="ch0105/">
-
-</script>
-
-<script id="ch0105/">
-
-</script>
-
-<script id="ch0105/">
-
-</script>
-
-<script id="ch0105/">
-
-</script>
-
-<script id="ch0105/">
-
-</script>
-
-<script id="ch0105/">
-
-</script>
-
-<script id="ch0105/">
+<script id="ch0105/17">
+let k = +prompt()
+if(k==1 || k==1){
+  console.log(1)
+}
+let resPre = 1
+let res = 1
+for(let i=2;i<k;i++){
+  let a = res
+  res = res + resPre
+  resPre = a
+}
+console.log(res)
 
 </script>
 
-<script id="ch0105/">
+<script id="ch0105/18">
+let n = +prompt()
+let a = +prompt()
+let b = +prompt()
+let sta = (b/a).toFixed(2)
+for(let i=0;i<n-1;i++){
+  let y = +prompt()
+  let x = +prompt()
+  let res = (x/y).toFixed(2)
+  if(res-sta>0.05){
+    console.log("better")
+  }
+  else if (sta-res > 0.05){
+    console.log("worse")
+  }else{
+    console.log("same")
+  }
+}
+</script>
+
+<script id="ch0105/19">
+let n = +prompt()
+let time = 0
+for(let i=0;i<n;i++){
+  let x = +prompt()
+  let y = +prompt()
+  let m = +prompt()
+  time = Math.ceil(time + Math.sqrt(x*x+y*y)/50 + m*1.5)
+}
+console.log(time)
 
 </script>
 
-<script id="ch0105/">
+<script id="ch0105/20">
+let h = +prompt()
+let sum = 0
+for(let i=0;i<10;i++){
+ sum += h
+ h = h/2
+}
+console.log(sum.toFixed(4))
+console.log(h.toFixed(7))
 
 </script>
 
-<script id="ch0105/">
+<script id="ch0105/21">
+let n = +prompt()
+let m = n *3 + 1
+console.log(n+'*'+"3+1="+m)
+while(m!=1){
+
+  m = m / 2
+  console.log(2*m+"/2="+m)
+
+}
+console.log("End")
+</script>
+
+<script id="ch0105/22">
+let total = 0
+let rest = 0
+for(let i = 0;i<12;i++){
+  let m = +prompt()
+  if(rest+300<m){
+    console.log("-"+(i+1))
+  }
+  if(rest+300-m>=0){
+    let count = Math.floor((rest+300-m)/100)
+    total = 100 * count + total
+    rest = rest + 300 - m - count*100
+  }
+}
+console.log(total*1.2)
 
 </script>
 
-<script id="ch0105/">
+<script id="ch0105/23">
+let m = +prompt()
+let n = +prompt()
+let res = n
+for(let i = 0;i<n;i++){
+  let x = +prompt()
+  if(x<n){
+    res = res -1
+    n = n-x
+  }
+}
+console.log(res)
+</script>
+
+<script id="ch0105/24">
+let n = +prompt()
+let res = 0
+for(let i = 0;i<n;i++){
+  let h = +prompt()
+  let l = +prompt()
+  if(h<=140&&h>=90&&l<=90&&l>=60){
+    res ++
+  }
+}\
+console.log(res)
 
 </script>
 
-<script id="ch0105/">
+<script id="ch0105/25">
+let x = +prompt()
+console.log(x.toString(7))
+console.log(x.toString(9))
 
 </script>
 
-<script id="ch0105/">
+<script id="ch0105/26">
+let n = +prompt()
+let res = 0
+for(let i = 0;i<n;i++){
+  let m = prompt()
+  let a = +m[0]
+  let b = +m[1]
+  let c = +m[2]
+  let d = +m[3]
+  if(d-a-b-c>0){
+    res++
+  }
+}
+console.log(res)
+</script>
 
+<script id="ch0105/27">
+let n=1
+let sum=0
+let k = +prompt()
+while(sum<=k){
+  sum += 1/n
+  n++
+}
+n--
+console.log(n)
+</script>
+
+<script id="ch0105/28">
+let n = +prompt()
+while(n>0){
+  let a = n%10
+  console.log(a)
+  n = Math.floor(n/10)
+}
+</script>
+
+<script id="ch0105/29">
+let a = +prompt()
+if(a>=0){
+  let b = (""+a).split("").reverse().join("")
+  console.log(Number(b))
+}else{
+  let b = "" + a
+  b= b.slice(1)
+  b = (""+b).split("").reverse().join("")
+  console.log('-'+Number(b))
+
+}
+
+</script>
+
+<script id="ch0105/30">
+m = +prompt()
+k = +prompt()
+if(m%19==0){
+  m=""+m
+  for(let i=0;i<m.length;i++){
+    if(m[i]=='3'){
+      k--
+    }
+  }
+  if(k==0){
+    console.log("YES")
+  }else{
+    console.log("NO")
+
+  }
+}
+else{
+  console.log("NO")
+
+}
 </script>
 
 <script id="ch0105/">
