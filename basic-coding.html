@@ -581,13 +581,14 @@ console.log(count)
 <script id="ch0105/16">
 let housePrice = 200
 let salary = +prompt()
-let year = 1
+let sum = salary
+let year = 0
 let k = +prompt()
 
-while(salary<housePrice){
+while(sum<housePrice){
   year ++
   housePrice = housePrice * (1 + k/100)
-  salary  = salary * year
+  salary  = salary + sum
   if(year>20){
     console.log("Impossible")
     break
@@ -653,7 +654,7 @@ for(let i=0;i<10;i++){
  h = h/2
  sum+=h
 }
-console.log(sum.toFixed(4))
+console.log((sum-h).toFixed(4))
 console.log(h.toFixed(7))
 
 </script>
@@ -680,13 +681,13 @@ for(let i = 0;i<12;i++){
     console.log("-"+(i+1))
     break
   }
-  if(rest+300-m>=0){
+  else if(rest+300-m>=0){
     let count = Math.floor((rest+300-m)/100)
     total = 100 * count + total
     rest = rest + 300 - m - count*100
   }
+  console.log(total*1.2)
 }
-console.log(total*1.2)
 
 </script>
 
@@ -712,9 +713,11 @@ for(let i = 0;i<n;i++){
   let l = +prompt()
   if(h<=140&&h>=90&&l<=90&&l>=60){
     res ++
+  }else{
+    console.log(++res)
+    break
   }
 }
-console.log(res)
 
 </script>
 
