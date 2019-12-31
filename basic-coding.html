@@ -575,15 +575,16 @@ console.log(count)
     res = res * (1 + a/100)
   }
 
-  console.log(res.toFixed(0))
+  console.log(Math.floor(res))
 </script>
 
 <script id="ch0105/16">
 let housePrice = 200
 let salary = +prompt()
 let year = 1
+let k = +prompt()
+
 while(salary<housePrice){
-  let k = +prompt()
   year ++
   housePrice = housePrice * (1 + k/100)
   salary  = salary * year
@@ -638,7 +639,7 @@ for(let i=0;i<n;i++){
   let x = +prompt()
   let y = +prompt()
   let m = +prompt()
-  time = Math.ceil(time + Math.sqrt(x*x+y*y)/50 + m*1.5)
+  time = Math.ceil(time + Math.sqrt(x*x+y*y)/50*2 + m*1.5)
 }
 console.log(time)
 
@@ -650,6 +651,7 @@ let sum = 0
 for(let i=0;i<10;i++){
  sum += h
  h = h/2
+ sum+=h
 }
 console.log(sum.toFixed(4))
 console.log(h.toFixed(7))
@@ -676,6 +678,7 @@ for(let i = 0;i<12;i++){
   let m = +prompt()
   if(rest+300<m){
     console.log("-"+(i+1))
+    break
   }
   if(rest+300-m>=0){
     let count = Math.floor((rest+300-m)/100)
@@ -693,9 +696,9 @@ let n = +prompt()
 let res = n
 for(let i = 0;i<n;i++){
   let x = +prompt()
-  if(x<n){
+  if(x<m){
     res = res -1
-    n = n-x
+    m = m-x
   }
 }
 console.log(res)
@@ -710,7 +713,7 @@ for(let i = 0;i<n;i++){
   if(h<=140&&h>=90&&l<=90&&l>=60){
     res ++
   }
-}\
+}
 console.log(res)
 
 </script>
@@ -797,7 +800,7 @@ else{
 }
 </script>
 
-<script id="ch0105/">
+<script id="ch0105/31">
 
 </script>
 
