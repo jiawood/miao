@@ -588,7 +588,7 @@ let k = +prompt()
 while(sum<housePrice){
   year ++
   housePrice = housePrice * (1 + k/100)
-  salary  = salary + sum
+  sum  = salary + sum
   if(year>20){
     console.log("Impossible")
     break
@@ -686,7 +686,9 @@ for(let i = 0;i<12;i++){
     total = 100 * count + total
     rest = rest + 300 - m - count*100
   }
-  console.log(total*1.2)
+  if(i==11){
+    console.log(total*1.2+rest)
+  }
 }
 
 </script>
@@ -807,9 +809,11 @@ else{
 m = +prompt()
 n = +prompt()
 ls = new Array(n).fill(1)
-for( i=0;i<m;i++){
-  for(let j=i;j<n;j=(j+1)*(i+1)){
-    ls[j] = ~ls[j]
+for( i=1;i<=m;i++){
+  let j = 0
+  while(i*j+i-1<m){
+    ls[i*j+i-1] = ~ls[i*j+i-1]
+    j++
   }
 }
 for(let j=0;j<n;j++){
@@ -891,7 +895,10 @@ for(let i = 0;i<m;i++){
   n = +prompt()
   for(let j = n;j>=0;j--){
     c = +prompt()
-    console.log(n*c)
+    if(j!=0){
+      console.log(j*c)
+    }
+
   }
 }
 </script>
@@ -968,15 +975,61 @@ if(flag == 0){
 </script>
 
 <script id="ch0105/43">
+n = +prompt()
+let primes = [];
+// 用于存素数结果集
+
+loop:for(let x=2;x<=n;x++){
+       for(let k=2;k<x;k++){
+         if(x%k==0) continue loop;
+         //一旦有被小于它的数整除，则退出试下一个数
+       }
+       //能走到这一步的就是素数了
+       primes.push(x);
+}
+
+for(let i=primes.length-1;i>0;i--){
+  if(n%i==0){
+    console.log(i)
+    break
+  }
+}
 
 </script>
 
-<script id="ch0105/">
+<script id="ch0105/44">
+n = +prompt()
+let primes = [];
+// 用于存素数结果集
 
+loop:for(let x=2;x<=10000;x++){
+       for(let k=2;k<x;k++){
+         if(x%k==0) continue loop;
+         //一旦有被小于它的数整除，则退出试下一个数
+       }
+       //能走到这一步的就是素数了
+       primes.push(x);
+}
+console.log(primes[n-1])
 </script>
 
-<script id="ch0105/">
+<script id="ch0105/45">
+n = +prompt()
+count = 0
+sum = 0
+i = 0
+while(count < n){
+  i++
+  for(let j=0;j<i;j++){
+    sum += i
+    count++
+    if(count>=n){
+      break
+    }
+  }
 
+}
+console.log(sum)
 </script>
 
 
