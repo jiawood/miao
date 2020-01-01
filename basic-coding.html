@@ -804,38 +804,170 @@ else{
 </script>
 
 <script id="ch0105/31">
+m = +prompt()
+n = +prompt()
+ls = new Array(n).fill(1)
+for( i=0;i<m;i++){
+  for(let j=i;j<n;j=(j+1)*(i+1)){
+    ls[j] = ~ls[j]
+  }
+}
+for(let j=0;j<n;j++){
+  if(ls[j]==-2){
+    console.log(j+1)
+  }
+}
+</script>
+
+<script id="ch0105/32">
+q = 2
+p = 1
+sum = q/p
+n = +prompt()
+for(let i=1;i<n;i++){
+  x = q
+  q = q + p
+  p = x
+  sum = sum + q/p
+}
+console.log(sum.toFixed(4))
+</script>
+
+<script id="ch0105/33">
+sum = 0
+n = +prompt()
+for(let i=1;i<n+1;i++){
+  sum += Math.pow(-1,i-1)/i
+}
+console.log(sum.toFixed(4))
+</script>
+
+<script id="ch0105/34">
+n = +prompt()
+sum = 0
+tep = 1
+for(let i=1;i<n+1;i++){
+  for(let j=1;j<i+1;j++){
+    tep = tep * j
+  }
+  sum += tep
+  tep = 1
+}
+console.log(sum)
+</script>
+
+<script id="ch0105/35">
+n = +prompt()
+sum = 1
+tep = 1
+for(let i=1;i<n+1;i++){
+  for(let j=1;j<i+1;j++){
+    tep = tep * j
+  }
+  tep = 1/tep
+  sum += tep
+  tep = 1
+}
+console.log(sum.toFixed(10))
+</script>
+
+<script id="ch0105/36">
+x = +prompt()
+n = +prompt()
+sum = 1
+for(let i = 1;i<n+1;i++){
+  sum += Math.pow(x,i)
+}
+console.log(sum.toFixed(2))
+</script>
+
+<script id="ch0105/37">
 
 </script>
 
-<script id="ch0105/">
-
+<script id="ch0105/38">
+m = +prompt()
+for(let i = 0;i<m;i++){
+  n = +prompt()
+  for(let j = n;j>=0;j--){
+    c = +prompt()
+    console.log(n*c)
+  }
+}
 </script>
 
-<script id="ch0105/">
-
+<script id="ch0105/39">
+n = +prompt()
+sum = 0
+for(let i=1;i<n;i++){
+  if(i%7==0){
+    continue
+  }
+  if((""+i).includes("7")){
+    continue
+  }
+  sum += i*i
+}
+console.log(sum)
 </script>
 
-<script id="ch0105/">
-
+<script id="ch0105/40">
+n = +prompt()
+sum = 0
+for(let i=1;i<=n;i++){
+  let str = "" + i
+  for(let i=0;i<str.length;i++){
+    if(str[i]=="1"){
+      sum++
+    }
+  }
+}
+console.log(sum)
 </script>
 
-<script id="ch0105/">
-
+<script id="ch0105/41">
+m = +prompt()
+n = +prompt()
+sum = 0
+for(let i=m;i<=n;i++){
+  let str = "" + i
+  for(let i=0;i<str.length;i++){
+    if(str[i]=="2"){
+      sum++
+    }
+  }
+}
+console.log(sum)
+</script>
+<script id="ch0105/42">
+w = +prompt()
+h = +prompt()
+mark = prompt()
+flag = +prompt()
+res = ""
+if(flag == 1){
+  for(let i=0;i<h;i++){
+    for(let j=0;j<w;j++){
+      res += mark
+    }
+    console.log(res)
+  }
+}
+if(flag == 0){
+  for(let i=0;i<h;i++){
+    for(let j=0;j<w;j++){
+      if(j==0||j==w-1){
+        res += mark
+      }else{
+        res += " "
+      }
+    }
+    console.log(res)
+  }
+}
 </script>
 
-<script id="ch0105/">
-
-</script>
-
-<script id="ch0105/">
-
-</script>
-
-<script id="ch0105/">
-
-</script>
-
-<script id="ch0105/">
+<script id="ch0105/43">
 
 </script>
 
