@@ -808,6 +808,7 @@ else{
 <script id="ch0105/31">
 m = +prompt()
 n = +prompt()
+lst = []
 ls = new Array(n).fill(1)
 for( i=1;i<=m;i++){
   let j = 0
@@ -818,9 +819,10 @@ for( i=1;i<=m;i++){
 }
 for(let j=0;j<n;j++){
   if(ls[j]==-2){
-    console.log(j+1)
+    lst.push(j+1)
   }
 }
+console.log(lst.join(","))
 </script>
 
 <script id="ch0105/32">
@@ -893,6 +895,9 @@ console.log(sum.toFixed(2))
 m = +prompt()
 for(let i = 0;i<m;i++){
   n = +prompt()
+  if(n==0){
+    console.log(0)
+  }
   for(let j = n;j>=0;j--){
     c = +prompt()
     if(j!=0){
