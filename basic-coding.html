@@ -582,7 +582,7 @@ console.log(count)
 let housePrice = 200
 let salary = +prompt()
 let sum = salary
-let year = 0
+let year = 1
 let k = +prompt()
 
 while(sum<housePrice){
@@ -963,6 +963,7 @@ if(flag == 1){
       res += mark
     }
     console.log(res)
+    res=""
   }
 }
 if(flag == 0){
@@ -975,6 +976,7 @@ if(flag == 0){
       }
     }
     console.log(res)
+    res = ""
   }
 }
 </script>
@@ -1036,6 +1038,152 @@ while(count < n){
 }
 console.log(sum)
 </script>
+
+
+
+<script id="7">
+let n = +prompt()
+if(n%7==0){
+  console.log("YES")
+}else if((""+n).includes("7")){
+  console.log("YES")
+
+}
+else{
+  console.log("NO")
+}
+</script>
+
+<script id="sort">
+let lst = []
+for(let i=0;i<3;i++){
+  let a = +prompt()
+  lst.push(a)
+}
+for(let j=0;j<3;j++){
+  for(let m = j+1;m<3;m++){
+    if(lst[m]<lst[j]){
+      x = lst[j]
+      lst[j] = lst[m]
+      lst[m] = x
+    }
+  }
+  console.log(lst[j])
+}
+
+</script>
+
+
+<script id="narcissistic">
+let a = prompt()
+let n = a.length
+let sum = 0
+for(let i=0;i<n;i++){
+  sum += Math.pow((+a[i]),3)
+}
+if(sum == a){
+  console.log("YES")
+}else{
+  console.log("NO")
+}
+</script>
+
+<script id="narcissistics">
+for(let j=1;j<=1000;j++){
+  let a = ""+j
+  let n = a.length
+  let sum = 0
+  for(let i=0;i<n;i++){
+    sum += Math.pow((+a[i]),3)
+}
+  if(sum == a){
+    console.log(sum)
+  }
+}
+</script>
+
+<script id="palindrom">
+let a = prompt()
+let n = a.length
+let i = 0
+let j = n-1
+while(i<j){
+if(a[i]==a[j]){
+  i++
+  j--
+}else{
+  console.log("NO")
+  break
+}
+}
+if(i>=j){
+  console.log("YES")
+}
+</script>
+
+<script id="weekday">
+
+</script>
+
+<script id="complete-number">
+let n = +prompt()
+const lst = []
+for(let i=1;i<n/2+1;i++){
+  if(n%i==0){
+    lst.push(i)
+  }
+}
+let sum = 0
+for(let j = 0;j<lst.length;j++){
+  sum += lst[j]
+}
+if(sum == n){
+  console.log("YES")
+}else{
+  console.log("NO")
+}
+</script>
+
+<script id="complete-numbers">
+function isCn(n){
+  const lst = []
+for(let i=1;i<n/2+1;i++){
+  if(n%i==0){
+    lst.push(i)
+  }
+}
+let sum = 0
+for(let j = 0;j<lst.length;j++){
+  sum += lst[j]
+}
+if(sum == n){
+  return true
+}else{
+  return false
+}
+
+}
+for(let i=2;i<=1000;i++){
+  if(isCn(i)){
+    console.log(i)
+  }
+}
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+<script id="">
+
+</script>
+
+
+
 
 
 
