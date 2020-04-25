@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+  {{message}}
+</div>
+
+<div id="app-2">
+  <span v-bind:title="message">鼠标悬停几秒钟查看此处动态绑定的提示信息！</span>
+  <!-- v-bind 指将span元素节点的title属性和Vue实例中的message属性保持一致  -->
+</div>
+
+
+<!-- 条件与循环 -->
+<div id="app-3">
+  <p v-if="seen"> now you can see me</p>
+</div>
+
+
+<!-- 循环 -->
+<div id="app-4">
+  <ol>
+    <li v-for="todo in todos">
+      {{todo.text}}
+    </li>
+  </ol>
+</div>
+
+<!-- 事件监听器 -->
+<div id="app-5">
+  <p>{{message}}</p>
+  <button v-on:click="reverseMessage">反转消息</button>
+</div>
+
+<!-- 表单验证 -->
+<div id="app-6">
+  <p>{{message}}</p>
+  <input type="text" v-model = "message">
+</div>
+
+
+<!-- 组件化应用构建 -->
+<!-- 组件系统是一个重要的概念，它是一种抽象，允许我们使用小型的独立和通常可复用的组件构建大型应用 -->
+<!-- 一个组件本质上是一个拥有预定义选项的一个Vue实例 -->
+
+<div id="app-7">
+  <ol>
+    <!-- 为每个todo-item提供todo对象。todo对象是变量，即其内容可以是动态的。 -->
+    <todo-item
+    v-for="item in groceryList"
+    v-bind:todo="item"
+    v-bind:key="item.id">
+  </todo-item>
+  </ol>
+</div>
+
+
+<!-- 组件假想的示例 -->
+<div id="app">
+  <app-nav></app-nav>
+  <app-view>
+    <app-sidebar></app-sidebar>
+    <app-content></app-content>
+  </app-view>
+</div>
+<script>
+
+  Vue.component('todo-item',{
+    //todo-item 组件现在接受一个“prop”，类似于一个自定义attribute。
+    //这个prop名为todo
+    props:['todo'],
+    template:'<li>{{todo.text}}</li>'
+  })
+
+var app7 = new Vue({
+  el:"#app-7",
+  data:{
+    groceryList:[
+      {id:0,text:'蔬菜'},
+      {id:1,text:"milk"},
+      {id:3,text:"something people eat"}
+    ]
+  }
+})
+
+  var app6 = new Vue({
+    el:"#app-6",
+    data:{
+      message:"hello world"
+    }
+  })
+  var app5 = new Vue({
+    el:"#app-5",
+    data:{
+      message:"Hello Vue Js"
+    },
+    methods:{
+      reverseMessage:function(){
+        this.message = this.message.split("").reverse().join("")
+      }
+    }
+  })
+  var app4 = new Vue({
+    el:"#app-4",
+    data:{
+      todos:[
+        {text:"学习js"},
+        {text:"learn Vue"},
+        {text:"project"}
+      ]
+    }
+  })
+  var app = new Vue({
+    el:"#app",
+    data:{
+      // message:'Hello Vue its 响应式的编程'
+      message:'页面加载于' + new Date().toLocaleString()
+    }
+  })
+
+  var app2 = new Vue({
+    el:'#app-2',
+    data:{
+      message:'页面加载于' + new Date().toLocaleString()
+    }
+  })
+
+  var  app3 = new Vue({
+    el:'#app-3',
+    data:{
+      seen:true
+    }
+  })
+</script>
+</body>
+</html>

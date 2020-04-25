@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+  let data = {
+    name:"深拷贝",
+    user:{name:"xiaoj"},
+    arr:[]
+  }
+  //现在要把data的数据复制一遍，同时复制的时候改变新得到的数据原来的数据不改变
+  function copy(obj){
+    let res = obj instanceof Array ? [] : {}
+    for (const [k,v] of Object.entries(obj)){
+      res[k] = typeof v == "Object" ? copy(v) : v
+    }
+    return res
+  }
+
+  let hd = copy(data)
+  console.log(JSON.stringify(hd,null,2))
+</script>
+</html>

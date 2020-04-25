@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="components-dome">
+  <button-counter></button-counter>
+</div>
+
+<div id="components-props">
+  <blog-post title="My journey with vue"
+  v-for="post in posts"
+  v-bind:key = "post.id"
+  v-bind:title = "post.title"
+  ></blog-post>
+</div>
+<script>
+Vue.component("blog-post",{
+  props:['title'],
+  template:'<h3>{{title}}</h3>'
+})
+new Vue({
+  el:"#components-props",
+  data:{
+    posts:[
+      {id:1,title:"My journey with Vue"},
+      {id:2,title:"My journey with Js"},
+      {id:3,title:"My journey with fuck"},
+
+    ]
+  }
+  })
+
+Vue.component('button-counter',{
+  data:function(){
+    return {
+      count:0
+    }
+  },
+  template:"<button v-on:click='count++''>Click me!{{count}}</button>"
+})
+new Vue({el:"#components-dome"})
+</script>
+</body>
+</html>
