@@ -7,11 +7,11 @@ var xiaojaja = {
     }
   },
   isNaN:function(val){
-    let a = new Number(NaN)
-    if(a === val || val === NaN){
-      return true
+    if(typeof val === "object"){
+
+      return val.toString() === "NaN"
     }else{
-      return false
+      return val !== val
     }
   },
 
@@ -23,7 +23,8 @@ var xiaojaja = {
       n -= size
       arr = arr.slice(size)
     }
-    return res.push(arr)
+    res.push(arr)
+    return res
   },
   compact:function(arr){
     return arr.filter(a => a)
@@ -109,7 +110,7 @@ var xiaojaja = {
     }else if(n <= -fromIndex){
       fromIndex = 0
     }
-    for(let i=fromIndex;i++;i<arr.length){
+    for(let i=fromIndex;i<arr.length;i++){
       if(arr[i] = val){
         return i
       }
@@ -122,8 +123,9 @@ var xiaojaja = {
   },
   join:function(arr,sep=","){
     let res = ""
+
     for(let i of arr){
-      res += i + sep
+      res += i + String(sep)
     }
     return res.slice(0,res.length-1)
   },
@@ -142,17 +144,18 @@ var xiaojaja = {
     let l = 0
     let r = arr.length - 1
     while(l < r){
-      let mid = (l + r) >> 1  //左中位数
-      if(arr[mid]>val){
-        l = mid
+      let mid = (l + r ) >> 1  //右中位数
+      if(arr[mid] < val){
+        l = mid + 1
       }else{
-        r = mid - 1
+        r = mid
       }
     }
     return l
   },
   tail:function(arr){
-    return arr.shift()
+    arr.shift()
+    return arr
   },
   //unzip
   unzip:function(arr){
@@ -172,7 +175,7 @@ var xiaojaja = {
       return value.length
     }else if(value instanceof Object){
       let num = 0
-      for(let i of value){
+      for(let i in value){
         num++
       }
       return num
