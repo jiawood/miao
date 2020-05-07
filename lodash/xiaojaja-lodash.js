@@ -184,7 +184,166 @@ var xiaojaja = {
   //ciel 向上取整 但是增加了精度
   ciel(val,precision=0){
       return Math.ciel(val * Math.pow(10,precision)) / Math.pow(10,precision)
+  },
+  zip(...Arys){
+    let n = Arys.length
+    let maxLength = 0
+    for(let i = 0; i < n; i++){
+      maxLength = Math.max(maxLength,Arys[i].length)
+    }
+    let m = maxLength
+    let res = Array.from(Array(m),()=>new Array())
+    // let res = new Array.fill(() =>[])
+    for(let i = 0 ;i <m; i++){
+      for(let j = 0; j<n;j++){
+
+        res[i].push(Arys[j][i])
+      }
+    }
+    return res
+  },
+//countBy  通过后面输入的函数计数
+countBy(collecton,func){
+  let map = {}
+  for(let i in collecton){
+    if(typeof(func) === "function"){
+      let key = func(collecton[i])
+      if(map[key] === undefined){
+        map[key] = 1
+      }else{
+        map[key]++
+      }
+    }
+    if(typeof(func) === "string"){
+      let key = collecton[func]
+      if(map[key] === undefined){
+        map[key] = 1
+      }else{
+        map[key]++
+      }
+    }
   }
+  return map
+},
+
+
+//get 找到对象里面的值，path是路径，路径有几种不同的表示方法
+// def 是默认值
+get(obj,path,def){
+  let reg = /\w+/g
+  let arr = []
+  if(typeof(path) === "string"){
+    arr = path.match(reg)
+  }
+  else{
+    arr = path
+  }
+  for(let i of arr){
+    if(obj[i]){
+      obj = obj[i]
+    }else{
+      return def
+    }
+  }
+  return obj
+},
+
+//makeF辅助函数，将输入是predicate的函数抽成一个函数，便于处理
+//相关函数。
+makeF(predicate){
+  if (typeof predicate === "function"){
+    return predicate
+  } else if (typeof predicate === "string"){
+    return function (object) {
+      return xiaojaja.get(object,predicate)
+    }
+  }else if (Array.isArray(predicate)){
+    return function (object) {
+      let res = true
+      for(let i = 0; i < predicate.length - 1; i = i + 2){
+        let j = i + 1
+        let path = predicate[i]
+        let value = predicate[j]
+        res = res && xiaojaja.get(object, path) === value
+      }
+      return res
+    }
+  }else if (typeof predicate === "object") {
+      return function (object) {
+        for(let i in predicate){
+          if(object[i] !== predicate[i]){
+            return false
+          }
+        }
+        return true
+      }
+  }else{
+    return
+  }
+
+},
+// every
+every(collection,pred){
+  let f = this.makeF(pred)
+  for(let i in collection){
+    if(!f(collection[i])){
+      return false
+    }
+  }
+  return true
+},
+
+//filter
+filter(collection,pred){
+  let f = this.makeF(pred)
+  for(let i of collection){
+    if(f(i)){
+      return i
+    }
+  }
+  return
+},
+
+//sample 随机取数组中的一个数或者对象中的一个元素
+sample(collection){
+  let keys = object.keys(collection)
+  return collection[keys[Math.floor(Math.random() * keys.length) | 0]]
+},
+
+//sample 按照size随机采样
+/**
+ *
+ * @param {Array|Object} col {number} size
+ * @returns random Array
+ */
+sampleSize(col,size){
+  let n = Object.keys(col).length
+  if(size > n)  size = n
+  let res = []
+  for(let i = 0;i < size;i++){
+    let keys = Object.keys(col)
+    let randomKey = Math.floor(Math.random() * keys.length)
+    res.push(col[keys[randomKey]])
+    delete col[keys[randomKey]]
+
+  }
+  return res
+},
+
+//shuffle 重新洗牌 跟上面的代码一样
+shuffle(col){
+  let n = Object.keys(col).length
+  let res = []
+  for(let i = 0;i < n;i++){
+    let keys = Object.keys(col)
+    let randomKey = Math.floor(Math.random() * keys.length)
+    res.push(col[keys[randomKey]])
+    delete col[keys[randomKey]]
+  }
+  return res
+},
+
+//
 
 
 
