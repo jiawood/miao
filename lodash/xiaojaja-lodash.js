@@ -343,7 +343,51 @@ shuffle(col){
   return res
 },
 
-//
+//isArray
+isArray(val){
+  return Object.prototype.toString.call(val) == "[object Array]"
+},
+isArrayBuffer(val){
+  return Object.prototype.toString.call(val) == "[object ArrayBuffer]"
+},
+isArrayLike(val){
+  return (!this.isNull(val) && typeof val != "function"
+          && val.length != undefined && val.length >= 0
+          && val.length < Number.MAX_SAFE_INTEGER)
+},
+isArrayLikeObject(val){
+  return this.isArrayLike(val) && typeof val === "object"
+},
+isBoolean(val){
+  return Object.prototype.toString.call(val) == "[object Boolean]"
+},
+isDate(val){
+  return Object.prototype.toString.call(val) == "[object Date]"
+},
+//isFinite
+isFinite(val){
+  if(typeof val !== "number" || this.isNaN(val)) return false
+  return val >= Number.MIN_VALUE && val <= Number.MAX_VALUE
+},
+isFunction(val){
+  return typeof val === "function"
+},
+isNil(val){
+  return val == null
+},
+assign(object,...source){
+  for(let i of source){
+    for(let j of source.keys){
+      object[j] = i[j]
+    }
+  }
+  return object
+},
+
+
+
+
+
 
 
 
