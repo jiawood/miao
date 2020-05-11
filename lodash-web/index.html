@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>大喵教育前端培训</title>
+  <meta name="viewport" content="width=1440">
+  <link rel="stylesheet" href="others/dracula.min.css">
+  <link rel="stylesheet" href="styles/tester.css">
+  <script src="libs/lodash.min.js"></script>
+  <script>
+    function getHidingUsers() {
+      try {
+        var hiding_users = JSON.parse(localStorage.hiding_users)
+      } catch(e) {
+        hiding_users = []
+      }
+      return _.uniq(hiding_users)
+    }
+
+    function saveHidingUsers(users) {
+      localStorage.hiding_users = JSON.stringify(_.uniq(users))
+    }
+
+    function blockUser(userName) {
+      console.log(userName)
+      // debugger
+      var hiding_users = getHidingUsers()
+
+      hiding_users.push(userName)
+
+      saveHidingUsers(hiding_users)
+    }
+
+    function unblockUser(userName) {
+      var hiding_users = getHidingUsers()
+      var pos = hiding_users.indexOf(userName)
+
+      if (pos >= 0) {
+        hiding_users.splice(pos, 1)
+      }
+
+      saveHidingUsers(hiding_users)
+    }
+
+    function getImplementerNameFromUrl(url) {
+      var parts = url.split('/')
+      var fileName = parts[parts.length - 1]
+      var customLodashName = fileName.split('-')[0]
+      return customLodashName
+    }
+    function getImplementerNameFromUrl2(url) {
+      return url.split('//')[1].split('.')[0]
+      return customLodashName
+    }
+    function getNickName(url) {
+      var nickName = url.match(/\/\/(.*?)\//)[1]
+      if (nickName)
+        return nickName
+      else
+        return getImplementerNameFromUrl(url)
+    }
+    var project = location.search.substr(1)
+    if (!project) {
+      project = 'lodash'
+    }
+  </script>
+  <script>
+    var hiding_users = getHidingUsers()
+
+    //用户名允许中划线和大小写
+    //后有自动转换
+
+    var usernames = [
+      ['lyunfun', '联欢'],
+      ['me7426', '本山'],
+      ['Downie666', '唐Q'],
+      ['Yijia-jik', '亦佳'],
+      ['love-my', '王K'],
+      ['HSantu', '麒睿'],
+      ['brightzoe', '子夜'],
+      ['duandiudiu', '佳志'],
+      ['liuxusheng-panli', '旭升'],
+      ['JohyC', '桂尧'],
+      ['qiaoxi96', '乔X'],
+      ['clearlovesixteen', '尤Y'],
+      ['tangtc213', '天成'],
+      ['white-y', '政杰'],
+      ['zzzzreso', '朱G'],
+      ['ChaseBear', '相楠'],
+      ['TankChao', '康C'],
+      ['Liusitong678', '思彤'],
+      ['tangjiayi1994', '嘉一'],
+      ['xStars', '徐晟'],
+      ['liangddkk', '达康'],
+      ['xuchanghu725', '昌虎'],
+      ['ylf0925', '龙飞'],
+      ['luckyxuyaoyao', '金瑶'],
+      ['l963584201', '文俊'],
+      ['MrWang-JustToDo', '王H'],
+      ['ZHOUHENGG', '周H'],
+      ['royghu201901', '胡G'],
+      ['xiaojaja', '肖J'],
+      ['Post-90sRaccoon', '纬宸'],
+      ['tosu', '缪华'],
+      ['SilverCoin0214', '佐X'],
+      ['xuanlong2019', '宣L'],
+      ['yayavi88', '黄Y'],
+      ['nonmit', '燕婷'],
+      ['LanShiLiang', '世良'],
+      ['HuchiSama', '敏渊'],
+      ['guzeyu9527', '泽宇'],
+      ['jiangtao159', '江涛'],
+      ['TrueBurger', '建业'],
+      ['chenliefang', '烈芳'],
+      ['heavelll', '奕辰'],
+      ['tyuLei', '玉雷'],
+      ['zhangfeng7718', '张F'],
+      ['Ln2365539311', '鑫林'],
+      ['Zeno2019', '俊麟 '],
+      ['ConvergentCompleteCompact', '杰夫'],
+      ['tangQiao812', '汤Q'],
+      ['jackyen96', '甄J'],
+      ['MrWangJustToDo', '和军'],
+      ['ruoooo', '思佳'],
+      ['PastelSubliminal', '钰昊'],
+    ]
+// ================================================================
+    usernames = [['xiaojaja', '肖J']]
+// ================================================================
+    var nameByNickname = usernames.reduce((map, pair) => {
+      map[pair[0].toLowerCase().replace(/\-/g, '_')] = pair[1]
+      return map
+    }, {})
+
+    implementations = usernames
+    // .filter((it, i) => {
+    //   return i < 10
+    // })
+    .sort((a, b) => {//按姓名拼音序排序
+      return a[0].toLowerCase() > b[0].toLowerCase() ? 1 : -1
+    })
+    .map((it, index) => {//在it[2]里放入变量名和文件名（同名）
+      it[2] = it[0].toLowerCase().replace(/-/g, '_')
+      it.push(index)
+      return it
+    })
+    .filter(it => {//过滤掉那些不显示的
+      return hiding_users.indexOf(it[2]) === -1
+    })
+    // .filter(it => it[0] === 'liuyiliuyi')
+    .map((it) => {
+      return {
+        url: `https://${it[0]}.github.io/miao/lodash/${it[2]}-${project}.js`,
+        index: it[3],
+      }
+    })
+    .filter(it=>it.url)//过滤出有提供url的部分，这样比较好删一些
+    // .filter(it=>it.url.indexOf('XieDaMiao')>0)//用于调bug时把人数降为1
+    // implementations.unshift({url: `https://xieranmaya.github.io/fe-training/projects/lodash-tester/demo/XieDaMiao-${project}.js`})
+// =======================================================================
+    implementations = [{index:23, url:"http://localhost/lodash/xiaojaja-lodash.js"}]
+    console.log(implementations)
+// =======================================================================
+  </script>
+  <script src="libs/core-fn-list.js"></script>
+  <!-- <script src="libs/test-cases-by-hand.js"></script> -->
+  <script src="others/test-cases-by-hand.js"></script>
+  <script src="libs/auto-test-case.js"></script>
+  <script>
+    //合并人肉整理的测试用例与自动整理的部分
+    _.forOwn(testCasesByHand, function(value, key, obj) {
+      if (key == 'join') {
+        // debugger
+      }
+      if (testCases[key]) {
+        testCases[key] = testCases[key].concat(testCasesByHand[key])
+      } else {
+        testCases[key] = testCasesByHand[key]
+      }
+    })
+  </script>
+  <script type="notrun" data-comment="用于测试时把测试的函数个数降为1">
+    testCases = {
+      filter: testCases.filter
+    }
+  </script>
+  <script src="libs/extra-fn-test-cases.js"></script>
+</head>
+<body>
+  <h1>大喵教育前端培训 Lodash 实践项目实时状态</h1>
+  <section style="display: flex;font-size: x24px;">
+    <pre style="flex: 1;">
+      # 注意事项
+
+      * 刷lodash是加深对js的理解
+      * 刷leetcode是锻炼编程能力
+      * 不要使用转换为字符串再转回去的办法实现任何函数
+      * 文档中示例代码及注释不能完全看懂的先别做
+      * 整条全黄的话会有错误原因的告知，hover查看并修改即可
+      * 没有更新的话Ctrl+F5强刷即可
+      * 一般来说如非题目要求，不要修改函数的输入，而是返回新的值，即实现为纯函数
+
+      * 用户名不要以数字开头，以数字开头的同学请至github更改用户名，不用重新注册
+      * 文件名中最好不要包含中划线，如果包含中划线，请将中划线换为下划线然后做为变量名及文件名的前缀
+      * 文件名(&lt;username&gt;-lodash.js)全小写，用户名与'lodash'之间的分隔符为中划线
+      * 文件中的变量名全小写: var foobar = {chunk: function(){}}
+    </pre>
+    <div style="flex: 1;display: flex; flex-flow: column wrap; max-height: 250px;">
+      <span>以下用户被隐藏显示，勾选以取消（刷新生效）</span>
+
+      <script>
+        var hiding_users
+
+        try {
+          hiding_users = JSON.parse(localStorage.hiding_users)
+        } catch(e) {
+          hiding_users = []
+        }
+
+        hiding_users.forEach(user => {
+          document.write(`
+            <div>
+              <input type="checkbox" value="${user}" onclick="unblockUser(this.value)" /> ${user}
+            </div>
+          `)
+        })
+      </script>
+    </div>
+  </section>
+  <table border="1" class="result-table" data-comment="这个表格为sticky标题行">
+    <tbody>
+      <tr>
+        <th>0</th>
+        <script>
+          implementations.forEach(it => {
+            document.write(`<th>${it.index+1}</th>`)
+          })
+        </script>
+      </tr>
+      <tr>
+        <th><a target="_blank" href="https://lodash.com/docs/" title="点击直达文档首页">函数名</a></th>
+        <script>
+          implementations.forEach(it => {
+            document.write(`
+              <th title="${nameByNickname[getImplementerNameFromUrl(it.url)]}">
+              <a target="_blank" href="http://02f9az.coding-pages.com/lodash-oj7/${it.url}">${getImplementerNameFromUrl(it.url)}</a>
+              </th>
+            `)
+          })
+        </script>
+      </tr>
+    </tbody>
+  </table>
+
+  <table border=1 class="result-table">
+    <tbody id="result-body">
+      <tr>
+        <th title="打上勾的刷新后将不再显示（仅本机有效，可恢复）">勾上不看</th>
+        <script>
+          implementations.forEach((it, index) => {
+            document.write(`<th><input type="checkbox" value="${getImplementerNameFromUrl(it.url)}" onclick="blockUser(this.value)" /></th>`)
+          })
+        </script>
+      </tr>
+      <tr>
+        <th>0</th>
+        <script>
+          implementations.forEach(it => {
+            document.write(`<th>${it.index+1}</th>`)
+          })
+        </script>
+      </tr>
+      <tr>
+        <th><a target="_blank" href="https://lodash.com/docs/" title="点击直达文档首页">函数名</a></th>
+        <script>
+          implementations.forEach(it => {
+            document.write(`
+              <th title="${nameByNickname[getImplementerNameFromUrl(it.url)]}">
+              <a target="_blank" href="http://02f9az.coding-pages.com/lodash-oj7/${it.url}">${getImplementerNameFromUrl(it.url)}</a>
+              </th>
+            `)
+          })
+        </script>
+      </tr>
+    </tbody>
+  </table>
+  <span id="loading-status"></span>
+</body>
+<script src="libs/jquery-3.1.1.min.js"></script>
+<script src="libs/beautify.min.js"></script>
+<script src="libs/esprima-4.0.0.js"></script>
+<script src="libs/tester.js"></script>
+<script>
+$(function() {
+  $(window).on('scroll', _.throttle(function(){
+    if (window.scrollY > 135) {
+      $("table:first-of-type").addClass('show')
+    } else {
+      $("table:first-of-type").removeClass('show')
+    }
+  },100))
+  // debugger
+  var customLodashNames = implementations
+    .filter(it => it.url)
+    .map(it => it.url)
+    .map(getImplementerNameFromUrl)
+
+  console.log(customLodashNames)
+
+  var loaded = 0
+
+  console.time('loading all')
+  Promise.all(
+    implementations.map(it => {
+      console.time(it.url)
+      return loadScript(it.url).then(() => {
+        console.timeEnd(it.url)
+        loaded++
+        updateLoadingStatus(loaded)
+      })
+    })
+  ).then(it => {
+    console.timeEnd('loading all')
+  })
+  //加载并执行所有的代码
+    .then(function() {//所有实现都加载完成了
+      var timeout = 0;//让setTimeout顺次执行
+      var timegap = 32;//每个之间的间隔时间，最终就是setTimeout(fn, timeout++*timegap)
+      var customLodashs = customLodashNames.map(name=>window[name])
+      // _.forOwn(_, function(fn, methodName) {// 开始测某一个方法是否正确，按方法在lodash里面出现的顺序测
+      var progress = 0
+      Object.keys(testCases).forEach((methodName, index, cases) => {// 按照testCases里面的顺序测试
+        setTimeout(function() {
+          let fn = _[methodName]
+          let testResult//测试结果
+          let customFunctions//所有人自己实现的函数
+          // debugger
+          customFunctions = customLodashNames.map(name=>window[name][methodName])
+          testResult = customFunctions.map((customFunction,index) => {
+            return test(
+              customFunction,//被测试的函数
+              customLodashs[index],//被测试的函数的上下文
+              testCases[methodName],//针对一个函数的多条测试数据
+              _[methodName],//基准函数，以它的返回值为准
+              _//基准函数的上下文，注意这里不是obj，没有多余的逗号。。
+            )
+          })
+          // testResult为某一个函数对所有测试数据的测试结果
+          // console.log(methodName, testResult)
+          var row = testResult.map(result => {
+            //result是某一个人的某一个函数的在不同测试数据下的测试结果集合
+            //为数组，如果为null，则表示未实现
+            if (result) {
+              return {
+                text: result.map(oneCaseResult => {
+                  if (oneCaseResult.pass === true) {
+                    return `输入：${oneCaseResult.input}\n输出/期望：${oneCaseResult.output}`
+                  } else if (oneCaseResult.type == 'WrongAnswer') {
+                    return `输入：${oneCaseResult.input}\n输出：${oneCaseResult.output}\n期望：${oneCaseResult.expect}`
+                  } else if (oneCaseResult.type == 'SyntaxError') {
+                    return `错误：${oneCaseResult.error}\n`
+                  } else if (oneCaseResult.type == 'InfiniteLoop') {
+                    return `错误：死循环\n输入：${oneCaseResult.input}`
+                  }
+                  return `错误：${oneCaseResult.error}\n输入：${oneCaseResult.input}\n期望：${oneCaseResult.expect}`
+                }).join('\n=================\n')+`\n\n源码：\n${result[0].source}`,
+                status: result.every(it => it.pass) ? '通过' : '未通过',
+                type: result[0].type,
+                result: result,
+                passCount: result.filter(it=>it.pass).length,
+                unpassCount: result.filter(it=>!it.pass).length,
+              }
+            } else {
+              return {
+                status: '未实现',
+                text: '未实现',
+              }
+            }
+          }).map(result => {
+            // console.log('result',result)
+            // if (result.type == 'SyntaxError') {
+            //   return `<td class="syntax-error" title="${result[0].result.error}">语法错误</td>`
+            // }
+            if (result.status == '通过') {
+              return `<td class="pass" tabindex="-1" titles="点击可固定代码段">${result.passCount}/${result.unpassCount+result.passCount}<pre style="position:absolute;"><code class="js">${result.text}</code></pre></td>`
+            } else if(result.status == '未通过') {
+              return `<td class="unpass" tabindex="-1" titles="点击可固定代码段">${result.passCount}/${result.unpassCount+result.passCount}<pre style="position:absolute;"><code class="js">${result.text}</code></pre></td>`
+            } else {
+              return `<td class="unimplemented"></td>`
+            }
+          })
+          row = `
+            <tr>
+              <th class="${coreFns.includes(methodName) ? 'core-fns' : ''}">
+                <a
+                  title="${testCases[methodName].description}"
+                  target="_blank"
+                  href="https://lodash.com/docs/#${methodName}"
+                >
+                  ${methodName}
+                </a>
+              </th>
+              ${row.join('')}
+            </tr>
+          `
+          // console.log('row',row)
+          $('#result-body')
+            .append(row)
+            .find('pre code')
+            .each(function(i, block) {
+              // setTimeout(function() {
+              //   hljs.highlightBlock(block);
+              // }, 2e4)
+            });
+
+          progress++
+          updateLoadingStatus(progress, cases.length)
+          if (index === cases.length - 1) {
+            let el = document.querySelector('#loading-status')
+            el.style.display = 'block'
+            el.innerHTML = '正在给代码穿女装...'
+            setTimeout(function(){//这里不延迟的话是看不到效果的，因为下面的代码全是同步的
+              $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+              });
+              el.style.display = 'none'
+            })
+          }
+        }, timeout++*timegap)
+      })
+    })
+})
+
+function updateLoadingStatus(loadedCount, total = implementations.length){
+  var el = document.querySelector('#loading-status')
+  if (loadedCount === total) {
+    el.style.display = 'none'
+  } else {
+    el.style.display = 'block'
+    el.innerHTML = `${loadedCount} / ${total}`
+  }
+}
+
+/**
+ * 从线上下载并将代码保存到localStorage里
+ * @param  {String} src 需要下载的代码的URL
+ * @return {Promise<String>}     反回得到的代码文本内容
+ */
+function getAndSaveCode(src) {
+  return fetch(src).then(res => {
+    if (res.status !== 200) {
+      throw new Error('404')
+    }
+    return res.text().then(code => {
+      localStorage[src] = code
+      return code
+    })
+  }).catch(e => {
+    var codeName = getImplementerNameFromUrl(src)
+    return `window['${codeName}'] = {}`
+  })
+}
+
+/**
+ * 加载，检查，并执行代码
+ * @param  {[type]} src [description]
+ * @return {[type]}     [description]
+ */
+function loadScript(src) {
+  return Promise.resolve().then(function(){
+    if (localStorage[src]) {
+      return getAndSaveCode(src)//注释掉这一行即为使用已缓存的代码
+      return localStorage[src]
+    } else {
+      return getAndSaveCode(src)
+    }
+  }).then(code => {
+    var codeName = getImplementerNameFromUrl(src)
+    // code = (code).replace(`var ${codeName}`, `window.${codeName}`)
+    code = infiniteLoopDetector.wrap(code)
+    code = code.replace(/debugger/g, '/*debugger*/')
+    // code = code + `\n//# sourceURL=${codeName}-lodash.js`
+    // console.log(code)
+    window['code' + codeName] = code
+    var globalEval = eval//这么做了是为让eval把代码放在分局作用域执行
+    try {
+      // globalEval(code)//为了性能直接用eval在全局作用域执行代码
+      // return
+      if (code.trim() == '') {
+        throw {
+          code: 'BLANK_CODE',
+          stack: '你提交了空白代码？'
+        }
+      }
+      console.time('parse')
+      esprima.parse(code)//如果没有语法错误，这行将会正常走过
+      console.timeEnd('parse')//测试发现这个时间是相当久的，在20ms的数量级
+
+      console.time('runcode')
+      runCode(code)
+      console.timeEnd('runcode')
+
+      if (!window[codeName]) {
+        throw {
+          code: 'VAR_NAME_ERROR',
+          stack: '格式不对，请检查你的变量名，应与用户名相同并且用下划线替换中划线，且全小写'
+        }
+      }
+      return
+    } catch(e) {
+      // debugger
+      //如果出了错再在这里用esprima解析具体的错误行以便提示，这样就不用每段代码都用esp解析了，TODO
+      var Lodash = {}
+      console.log(e)
+      var syntaxErrorFn = function() {
+        if (e.lineNumber) {
+          throw {
+            type: 'SyntaxError',
+            word: '语法错误',
+            error: `Line ${e.lineNumber}: ${e.description}`,
+            source: code.split('\n')[e.lineNumber],
+          }
+        } else {
+          if (e.code == 'BLANK_CODE') {
+            throw {
+              type: 'SyntaxError',
+              word: '你提交了空白代码',
+              error: `${e.stack}`,
+              source: '',
+            }
+          }
+          if (e.code == 'VAR_NAME_ERROR') {
+            throw {
+              type: 'SyntaxError',
+              word: '变量名错误',
+              error: `${e.stack}`,
+              source: code,
+            }
+          }
+
+          throw {
+            type: 'SyntaxError',
+            word: '语法错误',
+            error: `${e.stack}`,
+            source: code,
+          }
+        }
+      }
+      Object.keys(testCases).forEach(methodName => {Lodash[methodName] = syntaxErrorFn})
+      window[codeName] = Lodash
+    }
+  })
+
+  function runCode(code) {
+    var gEval = eval
+    gEval(code)
+    return
+    //以前是下面这种写法，问题是代码没有语法错误但可能在初始化时就有运行时错误
+    //注意这个过程是同步的，所以不需要onload，而且此时已经确认了代码没有语法错误
+    var script = document.createElement('script')
+    script.innerHTML = code
+    document.body.appendChild(script)
+  }
+
+  // return new Promise(function(resolve, reject) {
+  //   var script = document.createElement('script')
+  //   script.src = src
+  //   document.body.appendChild(script)
+  //   script.onload = resolve
+  //   script.onerror = function(e) {
+  //     console.log(e)
+  //     resolve()
+  //   }
+  // })
+}
+</script>
+<script src="libs/infiniteLoopDetecter.js"></script>
+<script src="others/highlight.min.js"></script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    // hm.src = (location.protocol == 'file:' ? 'http:' : 'https:') + "//hm.baidu.com/hm.js?2243d09d24f5e80836f6b9d3a08d9fb0";
+    hm.src = 'http://localhost/lodash/others/hm.js'
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+</html>

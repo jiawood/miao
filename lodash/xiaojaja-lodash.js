@@ -111,7 +111,7 @@ var xiaojaja = {
       fromIndex = 0
     }
     for(let i=fromIndex;i<arr.length;i++){
-      if(arr[i] = val){
+      if(arr[i] == val || this.isNaN(arr[i]) && this.isNaN(val)){
         return i
       }
     }
@@ -215,7 +215,7 @@ countBy(collecton,func){
       }
     }
     if(typeof(func) === "string"){
-      let key = collecton[func]
+      let key = collecton[i][func]
       if(map[key] === undefined){
         map[key] = 1
       }else{
@@ -306,7 +306,7 @@ filter(collection,pred){
 
 //sample 随机取数组中的一个数或者对象中的一个元素
 sample(collection){
-  let keys = object.keys(collection)
+  let keys = Object.keys(collection)
   return collection[keys[Math.floor(Math.random() * keys.length) | 0]]
 },
 
@@ -375,14 +375,54 @@ isFunction(val){
 isNil(val){
   return val == null
 },
-assign(object,...source){
-  for(let i of source){
-    for(let j of source.keys){
-      object[j] = i[j]
+assign(...object){
+  const res = {}
+  for(let i in object){
+    for(let j in object[i]){
+      if(object[i].hasOwnProperty(j)){
+        res[j] = object[i][j]
+      }
     }
   }
-  return object
+  return res
 },
+range(start=0,end,step=1){
+
+  let res = []
+  if(step === 0){
+    for(let i = start;i < end; i++){
+      res.push(start)
+    }
+  }
+  if(step > 0){
+    while(start < end){
+      res.push(start)
+      start += step
+    }
+  }
+  if(step < 0){
+    while(start > end){
+      res.push(start)
+      start += step
+    }
+  }
+  return res
+},
+//defaults
+defaults(...sourses){
+  let res = {}
+  for(let sourse of sourses){
+    for(let i in sourse){
+      if(res[i] == undefined){
+        res[i] = sourse[i]
+      }
+    }
+  }
+  return res
+},
+
+
+
 
 
 
