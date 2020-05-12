@@ -420,6 +420,105 @@ defaults(...sourses){
   }
   return res
 },
+//invert 把一个对象 键和值 对换  后面出现的覆盖前面的
+invert(obj){
+  let res = {}
+  for(let i in obj){
+    res[obj[i]] = i
+  }
+  return res
+},
+//keys 返回keys
+keys(object){
+  const res = []
+  for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+      res.push(key)
+    }
+  }
+  return res
+},
+//omit 删除部分属性
+omit(obj,arr){
+  obj = obj
+  for(let key in obj){
+    if(arr.indexOf(key) > -1){
+      delete obj[key]
+    }
+  }
+  return obj
+},
+//getPath 获得路径的数组，
+getPath(path){
+  if(Array.isArray(path)){
+    return path
+  }
+  let reg = /\w+/g
+  return path.match(reg)
+},
+set(obj,path,def){
+  path = this.getPath(path)
+  let tep = obj
+  for(let i in path){
+    if(!tep[i]){
+      tep[i] = {}
+    }
+    tep = tep[i]
+  }
+  tep = def
+  return obj
+},
+value(obj){
+  return Object.values(obj)
+},
+camelCase(str){
+  str = str.toLowerCase()
+  let arr = str.match(/[a-z]+/g)
+  let res = ""
+  for(let i in arr){
+    if(i === 0){
+      res += arr[i]
+    }else{
+      res += arr[i][0].toUpperCase() + arr[i].slice(1)
+    }
+  }
+  return res
+},
+capitalize(str){
+  return str[0].toUpperCase() + str.slice(1).toLowerCase()
+},
+endsWith(str,val,end=str.length-1){
+  return str[end] === val
+},
+escape(str) {
+  let reg = /[&<>"']/g
+  let map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+  }
+  return str.replace(reg, e => map[e])
+},
+kebabCase(str){
+  str = str.toLowerCase()
+  let arr = str.match(/[a-z]+/g)
+  return arr.join("_")
+},
+lowerCase(str){
+  str = str.toLowerCase()
+  let arr = str.match(/[a-z]+/g)
+  return arr.join(" ")
+},
+lowerFirst(str){
+  return str[0].toLowerCase() + str.slice(1).toUpperCase()
+},
+
+
+
+
+
 
 
 
