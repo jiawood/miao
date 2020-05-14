@@ -389,6 +389,11 @@ assign(...object){
 range(start=0,end,step=1){
 
   let res = []
+  if(arguments.length === 1){
+    end = start
+    start = 0
+
+  }
   if(step === 0){
     for(let i = start;i < end; i++){
       res.push(start)
@@ -502,13 +507,17 @@ escape(str) {
   return str.replace(reg, e => map[e])
 },
 kebabCase(str){
-  str = str.toLowerCase()
   let arr = str.match(/([a-z]+|[A-Z][a-z]+|[A-Z]+)/g)
+  arr = arr.map(e => e.toLowerCase())
   return arr.join("-")
 },
 lowerCase(str){
   let arr = str.match(/([a-z]+|[A-Z][a-z]+|[A-Z]+)/g)
+  arr = arr.map(e => e.toLowerCase())
   return arr.join(" ")
+},
+snakeCase(str){
+  return this.lowerCase(str).split(" ").join("_")
 },
 lowerFirst(str){
   return str[0].toLowerCase() + str.slice(1)
@@ -526,7 +535,7 @@ padStart(string=" ",len=0,chars="  "){
     res += chars
     padCount--
   }
-  res += chars.slice(padRest)
+  res += chars.slice(0,padRest)
   res += string
   return res
 },
@@ -542,11 +551,11 @@ padEnd(string=" ",len=0,chars="  "){
     res += chars
     padCount--
   }
-  res += chars.slice(padRest)
+  res += chars.slice(0,padRest)
   return res
 },
 pad(string=" ",len=0,chars="  "){
-  let left = len / 2 | 0
+  let left = (len-string.length) / 2 | 0
   let right = len - left
   return this.padStart(string,left,chars) + this.padEnd("",right,chars)
 },
@@ -567,19 +576,39 @@ replace(str,pattern,replacement){
   let reg = new RegExp(pattern,"g")
   reg.lastIndex = 0
   let start = 0
-  while(res.lastIndex != null){
+  while(reg.lastIndex != null){
     let arr = reg.exec(str)
-    let end = arr.index
-    for(let i=start;i < end;i++){
-      res += str[i]
+    if(!arr) break
+    if(arr){
+      let end = arr.index
+      for(let i=start;i < end;i++){
+        res += str[i]
+      }
+      res += replacement
+      start += end + pattern.length
     }
-    res += replacement
-    start += end + pattern.length
   }
   res += str.slice(start)
   return res
 
 },
+//split  以某个特定的字符串将字符串分成小段，并以列表的形式显示
+// 第三个参数表示最大的数组长度,因为与replace的思路类似，故取巧
+split(string='',separator,limit){
+  if(!string) return ''
+  return string.split(separator).slice(0,limit)
+},
+startCase(str){
+  let res = str.match(/([A-Z][a-z]+|[A-Z]+|[a-z]+)/g)
+  res = res.map(e => e[0].toUpperCase() + e.slice(1))
+  return res.join(" ")
+},
+startsWith(str,start,position=0){
+  return str[position] === start
+},
+toLower(str){
+  return str.toLowerCase()
+}
 
 
 
